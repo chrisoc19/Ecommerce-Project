@@ -12,3 +12,8 @@ def logout(request):
     auth.logout(request)
     messages.success(request, "You have successfully been logged out")
     return redirect(reverse('index'))
+
+
+def login(request):
+    """Return a login page"""
+    return render(request, 'login.html')
