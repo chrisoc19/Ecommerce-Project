@@ -6,6 +6,7 @@ from accounts.forms import UserLoginForm, UserRegistrationForm
 
 
 # Create your views here.
+@login_required
 def index(request):
     """Return the index.html """
     return render(request, 'index.html')
