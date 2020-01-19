@@ -1,26 +1,5 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>Django Auth</title>
-</head>
-
-<body>
-<h1> Home </h1>
-    <nav>
-        <ul>
-            <li><a href="{% url 'login' %}">Login</a></li>
-            <li><a href="{% url 'logout' %}">Logout</a></li>
-            <li><a href="#">Register</a></li>
-            <li><a href="#">Profile</a></li>
-        </ul>
-    </nav>
-
-    <hr> {% if messages %}
-    <div>
-        {% for message in messages %} {{ message }} {% endfor %}
-    </div>
-    {% endif %}
-</body>
-
-</html>
+{% extends 'base.html' %}
+{% block content %}
+<h3>Welcome to my AuthenticateMe web application.</h3>
+<p>I'm learning how to build functionality that will allow users to register, login and logout of web applications.</p>
+{% endblock %}
