@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% block page_title %}Login Page{% endblock %} {% block page_heading %}Home{% endblock %} {% block content %}
+{% extends 'base.html' %} {% block page_title %}Login Page{% endblock %} {% block page_heading %}Login page{% endblock %} {% block content %}
 <form method="POST">
     {% csrf_token %} {{ login_form }}
     <button type="submit">Login</button>
