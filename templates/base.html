@@ -1,4 +1,4 @@
-{% load staticfiles %}
+  {% load staticfiles %}
 <html>
 
 <head>
@@ -9,6 +9,7 @@
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    
     <link rel="stylesheet" href="{% static 'css/custom.css' %}" type="text/css">
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -28,13 +29,12 @@
             {% endif %}
         </ul>
     </nav>
-  <h1>
+
+    <h1>
         {% block page_heading %}{% endblock %}
     </h1>
-
-    <hr> {% if messages %}
+    {% if messages %}
     <div>
-    
         {% for message in messages %} {{ message }} {% endfor %}
     </div>
     {% endif %} {% block content %}{% endblock %}
