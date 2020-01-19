@@ -9,10 +9,10 @@
         {% block page_heading %}{% endblock %}
     </h1>
 
-    <nav>
-        <ul>
+    <nav class="navbar navbar-default">
+        <ul class="nav navbar-nav">
             {% if user.is_authenticated %}
-            <li><a href="#">Profile</a></li>
+            <li><a href="{% url 'profile' %}">Profile</a></li>
             <li><a href="{% url 'logout' %}">Logout</a></li>
             {% else %}
             <li><a href="{% url 'login' %}">Login</a></li>
