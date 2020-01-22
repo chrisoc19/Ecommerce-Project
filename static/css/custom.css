@@ -4,15 +4,22 @@ body {
     overflow-x:hidden;
     margin-left: 20px;
     margin-right: 20px;
+   
+    background: linear-gradient(to right,#cc944e, #d0025b);
+    min-height: 100vh;
     
+}
+
+
+.navbar{
+    margin-bottom: 100px;
 }
 
 footer {
     margin-top: 40px;
     padding-top: 40px;
     padding-bottom: 40px;
-    border-top: 1px solid #ededed;
-    color: #A9A9A9;
+   
 }
 
 .icon-bar {
@@ -67,22 +74,19 @@ caption p {
     word-wrap: break-word;
 }
 
-.row.row-flex {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 30px;
-}
 
-.panel-default {
-    border-color: transparent;
-    padding: 0 10px;
-}
-
-.panel-body {
-    height: 100%;
-    border: 1px solid #ddd;
-}
 
 .product-description {
     min-height: 40px;
+}
+
+.total{
+
+  margin-right: 110px
+}
+
+
+.container-cart{
+   text-align: center;
+   margin-right: 47%;
 }

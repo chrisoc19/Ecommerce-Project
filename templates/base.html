@@ -7,9 +7,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Ecommerce</title>
+    
+    
+
+
+
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
 		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.min.css' %}">
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
 	</script>
@@ -34,7 +40,7 @@
 			<ul class="navbar-nav mr-auto">
 
 				<li class="nav-item active">
-					<a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+					<a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="#">Link</a>
@@ -43,7 +49,7 @@
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
 						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Dropdown
+						Accounts
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 						{% if user.is_authenticated %}
@@ -63,13 +69,18 @@
 				</li>
 				
 			</ul>
+            <a class="nav-item" href="{% url 'view_cart' %}"> Cart<i class="fas fa-shopping-basket"></i>
+                        {% if product_count > 0 %}
+						<label class="badge badge-warning">{{ product_count }}</label>
+						{% endif %}
+                        </a>
 			<form class="form-inline my-2 my-lg-0" action="{% url 'search' %}" method="get">
 				<input class="form-control mr-sm-2" type="search" name="q" placeholder="Search" aria-label="Search">
 				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 			</form>
 		</div>
 	</nav>
-	<!-- Fixed masthead -->
+
 
 	{% if messages %}
 	<div class="alert alert-success">
