@@ -36,14 +36,20 @@ def checkout(request):
                 order_line_item.save()
 
             try:
+                print("About to create User")
                 customer = stripe.Charge.create(
+                    print("Customer has been created"),
                     amount=int(total * 100),
                     currency="EUR",
                     description=request.user.email,
                     card=payment_form.cleaned_data['stripe_id']
                 )
+                print("customer: ")
+                print(customer)
             except stripe.error.CardError:
+                print("There has been an error")
                 messages.error(request, "Your card was declined!")
+            print("out of try and except")
 
             if customer.paid:
                 messages.error(request, "You have successfully paid")
