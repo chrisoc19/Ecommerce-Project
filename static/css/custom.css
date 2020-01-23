@@ -5,15 +5,12 @@ body {
     margin-left: 20px;
     margin-right: 20px;
    
-    background: linear-gradient(to right,#cc944e, #d0025b);
-    min-height: 100vh;
+    
     
 }
-.carousel-img
-{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.carousel {
+  width:640px;
+  height:360px;
 }
 .navbar{
     margin-bottom: 100px;
@@ -66,9 +63,16 @@ footer {
 }
 
 .product {
+    text-align: center;
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+}
+.products {
+    text-align: center;
     width: 150px;
     height: 150px;
     margin: 0 auto;
@@ -93,4 +97,8 @@ caption p {
 .container-cart{
    text-align: center;
    margin-right: 47%;
+}
+
+.happiness{
+    background-color: pink;
 }
