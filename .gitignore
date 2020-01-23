@@ -3,3 +3,5 @@ env.py
 *.pyc
 __pycache__
 .coverage
+static/
+media/
