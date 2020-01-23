@@ -15,6 +15,9 @@ body {
 .navbar{
     margin-bottom: 100px;
 }
+.cart-item{
+    margin-left: 5px;
+}
 
 footer {
     margin-top: 40px;
