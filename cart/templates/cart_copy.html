@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+{% load bootstrap_tags %}
+
+{% block content %}
+
+
+<div class="row row-flex">
+    {% for item in cart_items %}
+        <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
+            <div class="panel-body">
+                <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')"></div>
+
+                <h3>{{ item.product.name }}</h3>
+                <p class="product-description">{{ item.product.description }}</p>
+                <p>{{ item.product.price }}</p>
+                <p>No. Items: {{item.quantity}}</p>
+
+                <form method="post" action="{% url 'adjust_cart' item.id %}">
+                    {% csrf_token %}
+                    <div class="input-group">
+                        <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
+                        
+                        <span class="input-group-btn">
+                            <button class="btn btn-success" type="submit">Add</button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+<div class="row total">
+    <p>Total: </p>
+    <p><span  aria-hidden="true"></span>{{ total }}</p>
+</div>
+<div class="row"><a href="/" class="btn btn-success" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>Checkout</a></div>
+
+{% endblock %}
