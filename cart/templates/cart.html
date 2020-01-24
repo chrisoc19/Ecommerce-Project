@@ -20,21 +20,7 @@
 <p>{{ item.product.price }}</p>
 
 </div>
-
-</div>
-
-
-
-
-<div class="container container-cart">
-	<div class="row justify-content-center">
-		<div class="product" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')"></div>
-		<div class="col-11 col-md-8 col-lg-6 small-box-shadow">
-      
-		<p>{{ item.product.price }}</p>
-		<p>No. Items: {{item.quantity}}</p>
-        
-			<form action="{% url 'adjust_cart' item.id %}" method="POST">
+<form action="{% url 'adjust_cart' item.id %}" method="POST">
 				{% csrf_token %}
 				<div class="row">
 
@@ -48,15 +34,11 @@
 
 					</div>
 			</form>
+</div>
 
 
-		</div>
-	</div>
-</div>
-</div>
-<div class="col-12">
-    <hr>
-</div>
+
+
 {% endfor %}
 
 <div class="container total">

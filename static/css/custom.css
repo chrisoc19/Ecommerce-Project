@@ -4,7 +4,7 @@ body {
     overflow-x:hidden;
     margin-left: 20px;
     margin-right: 20px;
-   
+   background-color: blue;
     
     
 }
@@ -20,7 +20,7 @@ body {
 }
 
 footer {
-    margin-top: 40px;
+    margin-top: 290px;
     padding-top: 40px;
     padding-bottom: 40px;
    
