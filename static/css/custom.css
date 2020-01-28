@@ -11,6 +11,15 @@ body {
   width:640px;
   height:360px;
 }
+
+.jumbotron{
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+
+
 .navbar{
     margin-bottom: 100px;
 }

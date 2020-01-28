@@ -2,18 +2,125 @@
 {% load static %}
 {% block content %}
 
-{% for category in categories %}
 
 
-
-<div class="card " style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">{{ category.name }}</h5>
-    <a  href="{{category.get_absolute_url}}" class="btn btn-primary">Go somewhere</a>
+<!-- <div class="container">
+	<div class="row">
+		<div class="col-sm">
+			<h2><a href="{{category.get_absolute_url}}">{{ category.name }}</a></h2>
+            <a href="{{category.get_absolute_url}}" ><div class="product" style="background-image: url('{{ MEDIA_URL }}{{ category.image }}')"></div></a>
+		</div>
+	</div>
+	 -->
+<!-- </div> -->
+<!-- <div class="jumbotron" class="product" style="background-image: url('{{ MEDIA_URL }}{{ category.image }}')">
+  <h1 class="display-4">Hello, world!</h1>
+  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <hr class="my-4">
+  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+</div> -->
+<!-- 
+<div class=" container" style="background-image: url('{{ MEDIA_URL }}{{ category.image }}')">
+<div class="jumbotron jumbotron-fluid" >
+  <div class="container">
+    <h1 class="display-4">Fluid jumbotron</h1>
+    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
   </div>
 </div>
+</div>
 
+<hr> -->
+
+
+
+<!-- Heading & Description -->
+        <div class="wow fadeIn">
+          <!--Section heading-->
+          <h2 class="h1 text-center mb-5">What is MDB?</h2>
+          <!--Section description-->
+          <p class="text-center">MDB is world's most popular Material Design framework for building responsive,
+            mobile-first websites
+            and apps. </p>
+          <p class="text-center mb-5 pb-5">Trusted by over
+            <strong>400 000</strong> developers and designers. Easy to use & customize. 400+ material UI elements,
+            templates
+            & tutorials.</p>
+        </div>
+        <!-- Heading & Description -->
+    
+        
+{% for category in categories %}
+ <main class="mt-5 pt-5">
+    <div class="container">
+
+      <!--Section: Jumbotron-->
+      <section class="card blue-gradient wow fadeIn">
+
+       
+        
+      </section>
+      <!--Section: Jumbotron-->
+
+      <!--Section: Cards-->
+      <section class="pt-5">
+
+        
+        <!--Grid row-->
+        <div class="row wow fadeIn">
+
+          <!--Grid column-->
+          <div class="col-lg-5 col-xl-4 mb-4">
+            <!--Featured image-->
+            <div class="view overlay rounded z-depth-1">
+              <img src="{{ MEDIA_URL }}{{ category.image }}" class="img-fluid" alt="">
+              <a href="{{category.get_absolute_url}}">
+                <div class="mask rgba-white-slight"></div>
+              </a>
+            </div>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-7 col-xl-7 ml-xl-4 mb-4">
+            <h3 class="mb-3 font-weight-bold dark-grey-text">
+              <strong><a href="{{category.get_absolute_url}}">{{ category.name }}</a></strong>
+            </h3>
+            <p class="grey-text">Push messaging provides a simple and effective way to re-engage with your users and in
+              this tutorial
+              you'll learn how to add push notifications to your web app</p>
+            <a href="{{category.get_absolute_url}}" class="btn btn-primary btn-md">{{ category.name }}
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+          <!--Grid column-->
+
+        
+    
+
+      </section>
+      <!--Section: Cards-->
+
+    </div>
+  </main>
+  <!--Main layout-->
+
+  
 {% endfor %}
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Initializations -->
+  <script type="text/javascript">
+    // Animations initialization
+    new WOW().init();
+
+  </script>
 
 {% endblock %}
