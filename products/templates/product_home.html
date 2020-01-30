@@ -30,7 +30,7 @@
 							<span class="mr-1">
                 <del>$200</del>
               </span>
-							<span>$100</span>
+							<span>${{product.price }} </span>
 						</p>
 
 						<p class="lead font-weight-bold">Description</p>
@@ -62,35 +62,6 @@
 			{% endfor %}
 			<hr>
 
-			<!--Grid row-->
-			<div class="row d-flex justify-content-center wow fadeIn">
-
-				<!--Grid column-->
-				<div class="col-md-6 text-center">
-
-					<h4 class="my-4 h4">Categories</h4>
-
-
-					<!--Grid column-->
-
-				</div>
-				<!--Grid row-->
-
-				<!--Grid row-->
-				<div class="row wow fadeIn">
-
-					<!--Grid column-->
-					<div class="col-lg-4 col-md-12 mb-4">
-						{% for category in categories %}
-						<img src="{{ MEDIA_URL }}{{ category.image }}" class="img-fluid" alt="">
-{% endfor %}
-        </div>
-						<!--Grid column-->
-
-					</div>
-					<!--Grid row-->
-
-				</div>
 
 </main>
 <!--Main layout-->

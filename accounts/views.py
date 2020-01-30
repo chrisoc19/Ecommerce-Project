@@ -16,13 +16,13 @@ def logout(request):
     """ Logs user out"""
     auth.logout(request)
     messages.success(request, "You have been successfully logged out!")
-    return redirect(reverse('index'))
+    return redirect(reverse('products'))
 
 
 def login(request):
     """ Retun a login page"""
     if request.user.is_authenticated:
-        return redirect(reverse('index'))
+        return redirect(reverse('products'))
     if request.method == "POST":
         login_form = UserLoginForm(request.POST)
         if login_form.is_valid():
