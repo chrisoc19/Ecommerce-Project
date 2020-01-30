@@ -5,35 +5,150 @@
 {% block content %}
 
 
-<div class="row row-flex">
-    {% for item in cart_items %}
-        <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
-            <div class="panel-body">
-                <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')"></div>
+{% for item in cart_items %}
+<div class="products">
+	<div class="product" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')">
+		<h5>{{ item.product.name }}</h5>
+	</div>
+	<hr>
+	<div>
+		<p>No. Items: {{item.quantity}}</p>
+		<p>{{ item.product.price }}</p>
 
-                <h3>{{ item.product.name }}</h3>
-                <p class="product-description">{{ item.product.description }}</p>
-                <p>{{ item.product.price }}</p>
-                <p>No. Items: {{item.quantity}}</p>
+	</div>
+	<form action="{% url 'adjust_cart' item.id %}" method="POST">
+		{% csrf_token %}
+		<div class="row">
 
-                <form method="post" action="{% url 'adjust_cart' item.id %}">
-                    {% csrf_token %}
-                    <div class="input-group">
-                        <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
-                        
-                        <span class="input-group-btn">
+			<div class="input-group">
+				<input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity" required>
+
+				<span class="input-group-btn">
                             <button class="btn btn-success" type="submit">Add</button>
                         </span>
-                    </div>
-                </form>
-            </div>
-        </div>
-    {% endfor %}
+
+
+			</div>
+	</form>
 </div>
-<div class="row total">
-    <p>Total: </p>
-    <p><span  aria-hidden="true"></span>{{ total }}</p>
+
+
+
+
+{% endfor %}
+
+<div class="container total">
+	<div class="row ">
+		<div class="col">
+			<p>Total: ${{ total }}</p>
+
+
+
+			<a href="{% url 'checkout' %}" class="btn btn-dark" role="button">Checkout</a>
+
+		</div>
+	</div>
 </div>
-<div class="row"><a href="/" class="btn btn-success" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>Checkout</a></div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-xs-8">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<div class="panel-title">
+						<div class="row">
+							<div class="col-xs-6">
+								<h5><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</h5>
+							</div>
+							<div class="col-xs-6">
+								<button type="button" class="btn btn-primary btn-sm btn-block">
+									<span class="glyphicon glyphicon-share-alt"></span> Continue shopping
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-xs-2"><img class="img-responsive" src="http://placehold.it/100x70">
+						</div>
+						<div class="col-xs-4">
+							<h4 class="product-name"><strong>Product name</strong></h4><h4><small>Product description</small></h4>
+						</div>
+						<div class="col-xs-6">
+							<div class="col-xs-6 text-right">
+								<h6><strong>25.00 <span class="text-muted">x</span></strong></h6>
+							</div>
+							<div class="col-xs-4">
+								<input type="text" class="form-control input-sm" value="1">
+							</div>
+							<div class="col-xs-2">
+								<button type="button" class="btn btn-link btn-xs">
+									<span class="glyphicon glyphicon-trash"> </span>
+								</button>
+							</div>
+						</div>
+					</div>
+					<hr>
+					<div class="row">
+						<div class="col-xs-2"><img class="img-responsive" src="http://placehold.it/100x70">
+						</div>
+						<div class="col-xs-4">
+							<h4 class="product-name"><strong>Product name</strong></h4><h4><small>Product description</small></h4>
+						</div>
+						<div class="col-xs-6">
+							<div class="col-xs-6 text-right">
+								<h6><strong>25.00 <span class="text-muted">x</span></strong></h6>
+							</div>
+							<div class="col-xs-4">
+								<input type="text" class="form-control input-sm" value="1">
+							</div>
+							<div class="col-xs-2">
+								<button type="button" class="btn btn-link btn-xs">
+									<span class="glyphicon glyphicon-trash"> </span>
+								</button>
+							</div>
+						</div>
+					</div>
+					<hr>
+					<div class="row">
+						<div class="text-center">
+							<div class="col-xs-9">
+								<h6 class="text-right">Added items?</h6>
+							</div>
+							<form action="{% url 'adjust_cart' item.id %}" method="POST">
+		                        {% csrf_token %}
+		                            <div class="row">
+
+			                            <div class="input-group">
+				                            <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity" required>
+
+				                            <span class="input-group-btn">
+                                     <button class="btn btn-success" type="submit">Add</button>
+                                         </span>
+
+
+			                             </div>
+	                        </form>
+						</div>
+					</div>
+				</div>
+				<div class="panel-footer">
+					<div class="row text-center">
+						<div class="col-xs-9">
+							<h4 class="text-right">Total <strong>$50.00</strong></h4>
+						</div>
+						<div class="col-xs-3">
+							<button type="button" class="btn btn-success btn-block">
+								Checkout
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
 
 {% endblock %}

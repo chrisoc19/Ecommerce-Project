@@ -113,3 +113,48 @@ caption p {
 .happiness{
     background-color: pink;
 }
+
+
+ /* cart page */
+ .page-header {
+  text-align: center;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .page-header {
+    text-align: left;
+  }
+  .page-header small {
+    display: inline;
+  }
+}
+
+.cart-row {
+  margin: 10px 0;
+  padding: 10px 0;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.cart-row div {
+  text-align: center; 
+}
+
+.cart-row img.img-responsive { 
+  margin: 0 auto; 
+  width: 150px;
+    height: 150px;
+}
+
+.h3-price { 
+  color: rgb(20, 80, 150);
+  font-family: 'Oxygen Mono', monospace;
+}
+.cart-qty-input {
+  font-size: 1em;
+  font-family: 'sweet-monospaced';
+  margin-top: 10px;
+  padding: 10px;
+  width: 95%;
+  border: 1px solid black;
+}
