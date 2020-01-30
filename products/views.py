@@ -8,9 +8,17 @@ def all_products(request):
     return render(request, "products.html", {"products": products})
 
 
+
+def product_home(request):
+    products = Product.objects.all()
+    categories = Category.objects.all()
+    return render(request, "product_home.html", {"products": products,
+                                                 "categories": categories, })
+
+
 def products_detail(request, product_slug):
     products = Product.objects.get(slug=product_slug)
-    return render(request, "products_detail.html", {"products": products})
+    return render(request, products_detail.html, {"products": products})
 
 
 def all_categories(request):
