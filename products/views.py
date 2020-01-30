@@ -3,6 +3,12 @@ from .models import Product, Category
 
 
 # Create your views here.
+def all_products(request):
+    products = Product.objects.all()
+    return render(request, "products.html", {"products": products})
+
+
+
 def product_home(request):
     products = Product.objects.all()
     categories = Category.objects.all()
@@ -10,14 +16,9 @@ def product_home(request):
                                                  "categories": categories, })
 
 
-def all_products(request):
-    products = Product.objects.all()
-    return render(request, "products.html", {"products": products})
-
-
 def products_detail(request, product_slug):
     products = Product.objects.get(slug=product_slug)
-    return render(request, "products_detail.html", {"products": products})
+    return render(request, products_detail.html, {"products": products})
 
 
 def all_categories(request):
