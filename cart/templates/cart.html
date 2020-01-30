@@ -3,58 +3,74 @@
 {% load bootstrap_tags %}
 
 {% block content %}
- <div class="jumbotron jumbotron-fluid happiness text-white text-center">
-        <div class="container happiness">
-            <h1 class="display-1">Treat Yourself</h1>
-            <p class="lead">Happiness is just a Tshirt away...</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-10 col-md-offset-1">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th class="text-center">Price</th>
+                        <th class="text-center">Total</th>
+                        <th> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for item in cart_items %}
+                    <tr>
+                        <td class="col-sm-8 col-md-6">
+                        <div class="media">
+                            <a class="thumbnail pull-left" href="#"> <img class="media-object" src="{{ MEDIA_URL }}{{ item.product.image }}" style="width: 72px; height: 72px;"> </a>
+                            <div class="media-body">
+                                <h4 class="media-heading"><a href="{{item.product.get_absolute_url}}">{{ item.product.name }}</a></h4>
+                                 <h5 class="media-heading"> Category : <a href="#">{{ item.product.category }}</a></h5> 
+                                <span>Status: </span><span class="text-success"><strong>In Stock</strong></span>
+                            </div>
+                        </div></td>
+                        <td class="col-sm-1 col-md-1" >
+                   
+                        <form method="post" class="d-flex justify-content-left"action="{% url 'add_to_cart' item.id %}">
+						{% csrf_token %}
+							<!-- Default input -->
+							<input type="number" value="{{item.quantity}}" aria-label="Search" class="form-control"  name="quantity"style="width: 100px">
+						<button class="btn btn-primary btn-md my-0 p" type="submit">Add 
+                        </button>
+                        </form>
+                        </td>
+                        <td class="col-sm-1 col-md-1 text-center"><strong>{{ item.product.price }}</strong></td>
+                        <td class="col-sm-1 col-md-1 text-center"><strong>{{item.quantity}}</strong></td>
+                        <td class="col-sm-1 col-md-1">
+                        <button type="button" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove"></span> Remove
+                        </button></td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>   </td>
+                        <td><h3>Total</h3></td>
+                        <td class="text-right"><h3><strong>${{ total}}</strong></h3></td>
+                    </tr>
+                    <tr>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>
+                        <a class="btn btn-primary" href="{% url 'product_home' %}"  role="button">Shop</a>
+                          
+                        </td>
+                        <td>
+                        
+                        
+                            <a href="{% url 'checkout' %}" class="btn btn-dark" role="button">Checkout</a> <span class="glyphicon glyphicon-play"></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
-
-{% for item in cart_items %}
-<div class="products">
-<div class="product" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')">
-<h5>{{ item.product.name }}</h5></div>
-<hr>
-<div>
-<p>No. Items: {{item.quantity}}</p>
-<p>{{ item.product.price }}</p>
-
 </div>
-<form action="{% url 'adjust_cart' item.id %}" method="POST">
-				{% csrf_token %}
-				<div class="row">
-
-					<div class="input-group">
-						<input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity" required>
-
-						<span class="input-group-btn">
-                            <button class="btn btn-success" type="submit">Add</button>
-                        </span>
-
-
-					</div>
-			</form>
-</div>
-
-
-
-
-{% endfor %}
-
-<div class="container total">
-  <div class="row ">
-    <div class="col">
-     <p>Total: ${{ total }}</p>
-
-  
-   
-   <a href="{% url 'checkout' %}" class="btn btn-dark" role="button">Checkout</a>
-  
-  </div>
-  </div>
-</div>
-
-
-
-
-	{% endblock %}
+{% endblock %}
