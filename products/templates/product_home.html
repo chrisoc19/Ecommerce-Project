@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% for product in products %}
+<a href="{{product_sale.get_absolute_url}}">{{ product.name }}</a>
+
+<main class="mt-5 pt-4">
+	<div class="container dark-grey-text mt-5">
+
+		<!--Grid row-->
+		<div class="row wow fadeIn">
+
+			<!--Grid column-->
+			<div class="col-md-6 mb-4">
+
+				<img src="{{ MEDIA_URL }}{{ product.image }}"  class="img-fluid" alt="">
+
+        </div>
+				<!--Grid column-->
+
+				<!--Grid column-->
+				<div class="col-md-6 mb-4">
+
+					<!--Content-->
+					<div class="p-4">
+
+
+
+						<p class="lead">
+							<span class="mr-1">
+                <del>$200</del>
+              </span>
+							<span>$100</span>
+						</p>
+
+						<p class="lead font-weight-bold">Description</p>
+
+						<p>{{ product.description }}</p>
+
+
+
+						<form method="post" class="d-flex justify-content-left" action="{% url 'add_to_cart' product.id %}">
+				{% csrf_token %}
+				<!-- Default input -->
+				<input type="number" value="1" aria-label="Search" class="form-control"  name="quantity"style="width: 100px">
+				<button class="btn btn-primary btn-md my-0 p" type="submit">Add to cart
+                <i class="fas fa-shopping-cart ml-1"></i>
+              </button>
+
+			</form>
+
+						</form>
+
+					</div>
+					<!--Content-->
+
+				</div>
+				<!--Grid column-->
+
+			</div>
+			<!--Grid row-->
+			{% endfor %}
+			<hr>
+			
+			<!--Grid row-->
+			<div class="row d-flex justify-content-center wow fadeIn">
+
+				<!--Grid column-->
+				<div class="col-md-6 text-center">
+
+					<h4 class="my-4 h4">Categories</h4>
+
+					
+				<!--Grid column-->
+
+			</div>
+			<!--Grid row-->
+
+			<!--Grid row-->
+			<div class="row wow fadeIn">
+
+				<!--Grid column-->
+				<div class="col-lg-4 col-md-12 mb-4">
+{% for category in categories %}
+					<img src="{{ MEDIA_URL }}{{ category.image }}" class="img-fluid" alt="">
+{% endfor %}
+        </div>
+					<!--Grid column-->
+
+				</div>
+				<!--Grid row-->
+
+			</div>
+    
+</main>
+<!--Main layout-->
+{% endblock %}
