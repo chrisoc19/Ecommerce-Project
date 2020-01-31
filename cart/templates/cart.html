@@ -34,10 +34,11 @@
                         <form method="post" class="d-flex justify-content-left"action="{% url 'add_to_cart' item.id %}">
 						{% csrf_token %}
 							<!-- Default input -->
-							<input type="number" value="{{item.quantity}}" aria-label="Search" class="form-control"  name="quantity"style="width: 100px">
+							<input type="number" min="0" max="999" value="{{item.quantity}}" aria-label="Search" class="form-control"  name="quantity"style="width: 100px">
 						<button class="btn btn-primary btn-md my-0 p" type="submit">Add 
                         </button>
                         </form>
+                        
                         </td>
                         <td class="col-sm-1 col-md-1 text-center"><strong>{{ item.product.price }}</strong></td>
                         <td class="col-sm-1 col-md-1 text-center"><strong>{{item.quantity}}</strong></td>
