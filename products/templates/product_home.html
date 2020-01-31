@@ -1,66 +1,24 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-{% for product in products %}
-
-
-<main class="mt-5 pt-4">
-	<div class="container dark-grey-text mt-5">
-
-		<!--Grid row-->
-		<div class="row wow fadeIn">
-
-			<!--Grid column-->
-			<div class="col-md-6 mb-4">
-
-				<img src="{{ MEDIA_URL }}{{ product.image }}"  class="img-fluid" alt="">
-
-        </div>
-				<!--Grid column-->
-
-				<!--Grid column-->
-				<div class="col-md-6 mb-4">
-
-					<!--Content-->
-					<div class="p-4">
 
 
 
-						<p class="lead">
-							<span class="mr-1">
-                <del>$200</del>
-              </span>
-							<span>${{product.price }} </span>
-						</p>
+<div class="row row-flex">
+	{% for product in products %}
+    
 
-						<p class="lead font-weight-bold">Description</p>
-
-						<p>{{ product.description }}</p>
-
-
-
-						<form method="post" class="d-flex justify-content-left"
-							action="{% url 'add_to_cart' product.id %}">
-							{% csrf_token %}
-							<!-- Default input -->
-							<input type="number" value="1" aria-label="Search" class="form-control"  name="quantity"style="width: 100px">
-						<button class="btn btn-primary btn-md my-0 p" type="submit">Add to cart
-                            <i class="fas fa-shopping-cart ml-1"></i>
-                        </button>
-                        </form>
-
-						</form>
-
-					</div>
-					<!--Content-->
-
-				</div>
-				<!--Grid column-->
-
-			</div>
-			<!--Grid row-->
-			{% endfor %}
-			<hr>
+	<div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
+		<div class="panel-body">
+			<a href="{{product.get_absolute_url}}"><div class="product" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div></a>
+            <h5 style="text-align:center">{{ product.name }} - <p>${{ product.price }}</p>
+			</h5>
+		</div>
+	</div>
+	{% endfor %}
+</div>
+			
+			
 
 
 </main>
