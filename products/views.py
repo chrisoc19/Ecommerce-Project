@@ -4,10 +4,8 @@ from .models import Product, Category
 
 # Create your views here.
 def all_products(request):
-    products = Product.objects.all()
-    categories = Category.objects.all()
-    return render(request, "products.html", {"products": products,
-                                            "categories": categories})
+    products = Product.objects.filter(price="10")
+    return render(request, "products.html", {"products": products})
 
 
 def product_home(request):
@@ -18,7 +16,9 @@ def product_home(request):
 
 
 def products_detail(request, product_slug):
-    products = get_object_or_404(Product, slug=product_slug)
+    products = Product.objects.all()
+    if product_slug:
+        products = get_object_or_404(Product, slug=product_slug)
     return render(request, "products_detail.html", {"products": products})
 
 

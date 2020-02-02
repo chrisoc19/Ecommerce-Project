@@ -12,7 +12,7 @@
             <h2 style="text-align:center"><a href="{{ products.get_absolute_url }}">{{ product.category }}</a></h2>
                 <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
 
-                <h3>{{ product.name }}</h3>
+                <a href="{{ product.get_absolute_url }}">{{ product.name }}</a></h2>
                 
                 <p class="product-description">{{ product.description }}</p>
                 <p>{{ product.price }}</p>

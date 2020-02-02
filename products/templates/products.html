@@ -1,20 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-
-<div class="jumbotron text-center"> <h1 class="display-4">Valentines day sale!</h1>
-  <p class="lead">Special offers on selected items</p>
-  <hr class="my-4">
-  <p>Show someone how much you love them this valentines day.</p>
-  <p class="lead">
-    <a class="btn btn-primary btn-lg" href="{% url 'product_home' %}" role="button">Shop now</a>
-  </p>
-</div>
-
-<div class="text-center">
-<img src="https://scontent.cdninstagram.com/v/t51.2885-15/sh0.08/e35/s640x640/72096976_174660567066051_3841016033132579071_n.jpg?_nc_ht=scontent.cdninstagram.com&oh=8062e84eb4783586c938690eaeee23df&oe=5E81B379" class="img-fluid" alt="Responsive image">
-</div>
- <div class="well text-center">
+	<h1 class="display-4 text-center " >This is some kinda heading</h1>
+ <div class=" text-center">
     <div class="row">
         <div class="col-md-6">
             <img src="https://tshirtstore.centracdn.net/client/dynamic/articles/4827_75f4871f1e-aw19_1x1-21-ded-large_2805.jpg" alt="inn_logo">
@@ -24,4 +12,44 @@
         </div>
     </div>
 </div>
+
+<div class="jumbotron text-center"> <h1 class="display-4">Valentines day sale!</h1>
+  <p class="lead">Special offers on selected items</p>
+  <hr class="my-4">
+  <p>Show someone how much you love them this valentines day.</p>
+
+    <a class="btn btn-primary btn-lg" href="{% url 'product_home' %}" role="button">Shop now</a>
+  </p>
+</div>
+
+
+
+  
+    
+ 
+<h1 class="display-4 text-center " >10 Dollar tees!</h1>
+<h3 class="display-4 text-center " >While stocks Last</h3>
+ 
+            <!-- <img  class="rounded mx-auto d-block" src="{{ MEDIA_URL }}{{ product.image }}" alt="inn_logo"> -->
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner product">
+ {% for product in products %}
+ <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}" id="slide{{ forloop.counter }}">
+     <a href="{{product.get_absolute_url}}"> <img src="{{ MEDIA_URL }}{{ product.image }}" class="d-block w-100" alt="..."></a>
+    </div>
+    {% endfor %}
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" ></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+
+<script>$('.carousel').carousel()</script>
+
 {% endblock %}

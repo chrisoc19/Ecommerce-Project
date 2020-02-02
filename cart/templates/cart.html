@@ -3,7 +3,9 @@
 {% load bootstrap_tags %}
 
 {% block content %}
-
+ <heading class="col-11 col-md-8 col-lg-6 text-center">
+                <h1>Your shopping cart</h1>
+            </heading>
 <div class="container">
     <div class="row">
         <div class="col-sm-12 col-md-10 col-md-offset-1">
@@ -30,17 +32,17 @@
                             </div>
                         </div></td>
                         <td class="col-sm-1 col-md-1" >
-                   
-                        <form method="post" class="d-flex justify-content-left"action="{% url 'add_to_cart' item.id %}">
-						{% csrf_token %}
-							<!-- Default input -->
-							<input type="number" min="0" max="999" value="{{item.quantity}}" aria-label="Search" class="form-control"  name="quantity"style="width: 100px">
-						<button class="btn btn-primary btn-md my-0 p" type="submit">Add 
-                        </button>
-                        </form>
-                        
+
+
+                    <form action="{% url 'adjust_cart' item.id %}" method="POST" class="d-flex justify-content-left">
+		                {% csrf_token %}
+                        <input name="quantity" type="number" min="0" max="999" class="form-control" placeholder="{{item.quantity}}"  style="width: 100px"required>
+                        <button class="btn btn-primary btn-md my-0 p"  type="submit">Add</button> 
+	                </form>
+
+
                         </td>
-                        <td class="col-sm-1 col-md-1 text-center"><strong>{{ item.product.price }}</strong></td>
+                        <td class="col-sm-1 col-md-1 text-center"><strong>${{ item.product.price }}</strong></td>
                         <td class="col-sm-1 col-md-1 text-center"><strong>{{item.quantity}}</strong></td>
                         <td class="col-sm-1 col-md-1">
                         <button type="button" class="btn btn-danger">
