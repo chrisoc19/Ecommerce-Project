@@ -27,6 +27,7 @@ class Product(models.Model):
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
     image = models.ImageField(upload_to='images')
+    image2 = models.ImageField(upload_to='images', default='')
 
     Small = 'S'
     Medium = 'M'
