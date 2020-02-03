@@ -8,6 +8,12 @@ body {
     
 }
 
+.carousel-item{
+    height: 200px;
+} 
+.carousel-item img{
+    height: 200px;
+}
 .jumbotron{
 background: #c0392b;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to right, #8e44ad, #c0392b);  /* Chrome 10-25, Safari 5.1-6 */
@@ -80,6 +86,10 @@ footer {
     width: 300px;
     height: 300px;
     margin: 0 auto;
+}
+
+.product_detail:hover{
+    background-image: url('{{ MEDIA_URL }}{{ products.image2 }}')
 }
 .products {
     text-align: center;
