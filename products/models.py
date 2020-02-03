@@ -28,6 +28,20 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     image = models.ImageField(upload_to='images')
 
+    Small = 'S'
+    Medium = 'M'
+    Large = 'L'
+    SIZE_CHOICES = [
+        ('S', 'Small'),
+        ('M', 'Medium'),
+        ('L', 'Large')
+    ]
+    size = models.CharField(
+        max_length=2,
+        choices=SIZE_CHOICES,
+        default=''
+    )
+
     def get_absolute_url(self):
         return reverse('products_detail', args=[self.slug])
 

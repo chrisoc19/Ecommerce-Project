@@ -15,7 +15,10 @@
                 
                 <p class="product-description">{{ products.description }}</p>
                 <p>{{ products.price }}</p>
- 
+                <ul>
+                sizes : {{ products.size }}
+                </ul>
+                
                 <form method="post" class="d-flex justify-content-left">
 				{% csrf_token %}
 				<!-- Default input -->
