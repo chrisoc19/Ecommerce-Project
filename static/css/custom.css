@@ -14,15 +14,29 @@ body {
 .carousel-item img{
     height: 200px;
 }
-.jumbotron{
+/* .jumbotron{
 background: #c0392b;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #8e44ad, #c0392b);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #8e44ad, #c0392b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+/* background: -webkit-linear-gradient(to right, #8e44ad, #c0392b);  Chrome 10-25, Safari 5.1-6 */
+/* background: linear-gradient(to right, #8e44ad, #c0392b); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 
-  margin-top: 100px;
+  /* margin-top: 100px; */
+} */
+
+ /* Landing Page */
+
+.main-heading{
+    font-family: 'Zhi Mang Xing', cursive;
+
 }
+.jumbotron{
+    background: url("../static/imgs/sale.jpg") no-repeat center center; 
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
 
+}
 
 
 .navbar{
