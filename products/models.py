@@ -1,4 +1,5 @@
 from django.db import models
+from django import forms
 from django.core.urlresolvers import reverse
 
 
@@ -28,21 +29,10 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     image = models.ImageField(upload_to='images')
     image2 = models.ImageField(upload_to='images', default='')
-
-    Small = 'S'
-    Medium = 'M'
-    Large = 'L'
-    SIZE_CHOICES = [
-        ('S', 'Small'),
-        ('M', 'Medium'),
-        ('L', 'Large')
-    ]
-    size = models.CharField(
-        max_length=2,
-        choices=SIZE_CHOICES,
-        default=''
-    )
-
+    
+  
+   
+        # size = forms.CharField(label='Sizes', widget=forms.Select(choices=SIZE_CHOICES))
     def get_absolute_url(self):
         return reverse('products_detail', args=[self.slug])
 

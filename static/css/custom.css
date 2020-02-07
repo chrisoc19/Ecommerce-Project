@@ -8,12 +8,7 @@ body {
     
 }
 
-.carousel-item{
-    height: 200px;
-} 
-.carousel-item img{
-    height: 200px;
-}
+
 /* .jumbotron{
 background: #c0392b;  /* fallback for old browsers */
 /* background: -webkit-linear-gradient(to right, #8e44ad, #c0392b);  Chrome 10-25, Safari 5.1-6 */
@@ -62,9 +57,7 @@ footer {
     padding-left: 500px;
     padding-right: 600px;
 }
-.container{
-    text-align: center;
-}
+
 
 .messages{
     text-align: center;
@@ -136,6 +129,32 @@ caption p {
 .happiness{
     background-color: pink;
 }
+
+
+ /* Product detail page */
+ .carousel-indicators li {
+   display: inline-block;
+   width: 10px;
+   height: 10px;
+   margin: 1px;
+   text-indent: -999px;
+   cursor: pointer;
+   background-color: #000 \9 !important;
+   background-color: rgba(255, 255, 255, 100)!important;
+   border: 1px solid #000000!important;
+   border-radius: 10px!important;
+ }
+ 
+ .carousel-indicators .active {
+   width: 12px;
+   height: 12px;
+   margin: 0;
+   background-color: #333 \59;
+   background-color: rgba(255, 0, 0, 50);
+}
+
+
+
 
 
  /* cart page */

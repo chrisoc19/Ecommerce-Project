@@ -32,30 +32,35 @@
             <!-- /Icon Divider -->
 
             <!-- Checkout content -->
+            <div class="container bg-light">
+  <div class="py-5 text-center">
+   
+    </div>
 
-            <div class="row">
-                {% for item in cart_items %}
-                    <figure class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                        <div id="wrapper-002">
-                            <div
-                                class="product"
-                                style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')"></div>
-                            <br>
-                            <h3 class="text-002 lead">{{item.product.name}}</h3>
-                            <p class="product-description">{{ item.product.description }}</p>
+  <div class="row bg-light">
+    <div class="col-md order-md-2 mb-4">
+      <h4 class="d-flex justify-content-between align-items-center mb-3">
+        <span class="text-muted">Your cart</span>
+      </h4>
+       {% for item in cart_items %}
+      <ul class="list-group mb-3">
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+          <div>
+            <h6 class="my-0">{{item.product.name}}</h6>
+            <small class="text-muted">{{ item.product.description }}</small>
+          </div>
+          <span class="text-muted">{{ item.product.price }}</span>
+        </li>
+       {% endfor %}
+        <li class="list-group-item d-flex justify-content-between">
+          <span>Total (USD)</span>
+          <strong>${{total}}</strong>
+        </li>
+      </ul>
+    </div>
+</div>
 
-                        </div>
-
-                    </figure>
-                {% endfor %}
-            </div>
-
-            <div class="jumbotron ">
-                <div class="form-inline-001">
-                    <p>Total</p>
-
-                    <span class="glyphicon glyphicon-euro " aria-hidden="true"></span>{{ total }}</p>
-            </div>
+            
             <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
 
                 <legend class="form-inline-001">Payment Details</legend><br><br>
@@ -99,4 +104,6 @@
 </div>
 
 </section>
+
+
 {% endblock %}

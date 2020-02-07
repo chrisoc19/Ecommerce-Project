@@ -6,19 +6,18 @@ def view_cart(request):
     """A View that renders the cart contents page"""
     return render(request, "cart.html")
 
-
 def add_to_cart(request, id):
     """Add a quantity of the specified product to the cart"""
     quantity = int(request.POST.get('quantity'))
-
+    size = (request.POST.get('size'))
     cart = request.session.get('cart', {})
+    theObject = {"size": size, "quantity": quantity}
     if id in cart:
-        cart[id] = int(cart[id]) + quantity
+        cart[id] = int(cart[id]) + quantity + size
     else:
-        cart[id] = cart.get(id, quantity)
-
+        cart[id] = cart.get(id, theObject)
     request.session['cart'] = cart
-    return redirect(reverse('product_home'))
+    return redirect(reverse('view_cart'))
 
 def adjust_cart(request, id):
     """
