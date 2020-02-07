@@ -32,12 +32,12 @@
             <form method="post" class="d-flex justify-content-center" action="{% url 'add_to_cart' product.id %}">
 				{% csrf_token %}
 
-                <label for="size">Choose a size:</label>
+                <!-- <label for="size">Choose a size:</label>
                 <select id="size" name="size">
                     <option value="small" name="size">Small</option>
                     <option value="medium" name="size">Medium</option>
                     <option value="large" name="size">Large</option>
-                </select>
+                </select> -->
                 
 				<input type="number" value="1" aria-label="Search" min="0" class="form-control"  name="quantity"style="width: 100px">
 				<button class="btn btn-primary btn-md my-0 p" type="submit">Add to cart

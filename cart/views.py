@@ -20,6 +20,7 @@ def add_to_cart(request, id):
     request.session['cart'] = cart
     return redirect(reverse('product_home'))
 
+
 def adjust_cart(request, id):
     """
     Adjust the quantity of the specified product to the specified
