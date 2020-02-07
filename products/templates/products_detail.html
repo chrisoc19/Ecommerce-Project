@@ -4,7 +4,7 @@
 <div class="container" >
 <div class="row text-center">
 <div class="col-12">
-<h3 class="display-1 main-heading" style="font-family: 'Zhi Mang Xing', cursive; padding-bottom: 40px;">Viking Tees </h3>
+<h3 class="display-1 main-heading">Viking Tees </h3>
 </div>
 
 </div>
@@ -49,14 +49,10 @@
   </div>
 </div> -->
   
-    <form method="post">
-    {% csrf_token %}
-    {{form}}
-    <button type="submit">submit</button>
-    </form>
+    
 
         <p>${{ products.price }}</p>
-        <form method="post" class="d-flex justify-content-left" >
+        <form method="post" class="d-flex justify-content-left" action="{% url 'add_to_cart' products.id %}">
 		{% csrf_token %}
 		<!-- Default input -->
 		<input type="number" value="1" aria-label="Search" class="form-control"  name="quantity"style="width: 100px">
