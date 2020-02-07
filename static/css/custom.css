@@ -7,17 +7,31 @@ body {
     
     
 }
-.carousel {
-  width:640px;
-  height:360px;
-}
 
+
+/* .jumbotron{
+background: #c0392b;  /* fallback for old browsers */
+/* background: -webkit-linear-gradient(to right, #8e44ad, #c0392b);  Chrome 10-25, Safari 5.1-6 */
+/* background: linear-gradient(to right, #8e44ad, #c0392b); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+  /* margin-top: 100px; */
+} */
+
+ /* Landing Page */
+
+.main-heading{
+    font-family: 'Zhi Mang Xing', cursive;
+
+}
 .jumbotron{
-    background-size: contain;
-    background-position: center center;
-    background-repeat: no-repeat;
-}
+    background: url("../static/imgs/sale.jpg") no-repeat center center; 
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
 
+}
 
 
 .navbar{
@@ -43,9 +57,7 @@ footer {
     padding-left: 500px;
     padding-right: 600px;
 }
-.container{
-    text-align: center;
-}
+
 
 .messages{
     text-align: center;
@@ -78,9 +90,13 @@ footer {
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
-    width: 150px;
-    height: 150px;
+    width: 300px;
+    height: 300px;
     margin: 0 auto;
+}
+
+.product_detail:hover{
+    background-image: url('{{ MEDIA_URL }}{{ products.image2 }}')
 }
 .products {
     text-align: center;
@@ -113,6 +129,32 @@ caption p {
 .happiness{
     background-color: pink;
 }
+
+
+ /* Product detail page */
+ .carousel-indicators li {
+   display: inline-block;
+   width: 10px;
+   height: 10px;
+   margin: 1px;
+   text-indent: -999px;
+   cursor: pointer;
+   background-color: #000 \9 !important;
+   background-color: rgba(255, 255, 255, 100)!important;
+   border: 1px solid #000000!important;
+   border-radius: 10px!important;
+ }
+ 
+ .carousel-indicators .active {
+   width: 12px;
+   height: 12px;
+   margin: 0;
+   background-color: #333 \59;
+   background-color: rgba(255, 0, 0, 50);
+}
+
+
+
 
 
  /* cart page */

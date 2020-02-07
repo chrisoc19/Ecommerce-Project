@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h1>This is the product detail page</h1>
+<h1> {{ products.name }}</h1>
+<div class="row row-flex">
+
+
+
+<div class="card" style="width: 18rem;">
+<img class="card-img-top product" src="{{ MEDIA_URL }}{{ products.image }}"
+                onmouseover="this.src='{{ MEDIA_URL }}{{ products.image2 }}';"
+                onmouseout="this.src='{{ MEDIA_URL }}{{ products.image }}';">
+  
+  <div class="card-body">
+    <h5 class="card-title">{{ products.name }}</h5>
+    <p class="card-text">{{ products.description }}</p>
+    <p class="card-text">sizes : {{ products.size }}</p>
+   
+				<form method="post" class="d-flex justify-content-left">
+					{% csrf_token %}
+					<!-- Default input -->
+					<input type="number" value="1" aria-label="Search" class="form-control"  name="quantity"style="width: 100px">
+					<button class="btn btn-primary btn-md my-0 p" type="submit">Add to cart
+                <i class="fas fa-shopping-cart ml-1"></i>
+              </button>
+
+				</form>
+  </div>
+</div>
+
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class=" row-flex">
+
+
+			<h2 ><a href="">{{ products.category }}</a></h2>
+			
+            	<img class="product " src="{{ MEDIA_URL }}{{ products.image }}"
+                onmouseover="this.src='{{ MEDIA_URL }}{{ products.image2 }}';"
+                onmouseout="this.src='{{ MEDIA_URL }}{{ products.image }}';">
+                    </div>
+
+			
+			
+				<h3>{{ products.name }}</h3>
+
+				<p class="product-description">{{ products.description }}</p>
+				<p>{{ products.price }}</p>
+				<ul>
+					sizes : {{ products.size }}
+				</ul>
+
+				<form method="post" class="d-flex justify-content-left">
+					{% csrf_token %}
+					<!-- Default input -->
+					<input type="number" value="1" aria-label="Search" class="form-control"  name="quantity"style="width: 100px">
+					<button class="btn btn-primary btn-md my-0 p" type="submit">Add to cart
+                <i class="fas fa-shopping-cart ml-1"></i>
+              </button>
+
+				</form>
+	
+	
+
+</div>
+
+
+
+
+
+{% endblock %}
