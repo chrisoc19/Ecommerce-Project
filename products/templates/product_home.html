@@ -10,7 +10,7 @@
 
 	<div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
 		<div class="panel-body">
-			<a href="{{product.get_absolute_url}}"><div class="product" style="border:1px solid black; background-image: url('{{ MEDIA_URL }}{{ product.image }}');";>
+			<a href="{{product.get_absolute_url}}"><div class="product" style=" background-image: url('{{ MEDIA_URL }}{{ product.image }}');";>
             </div></a>
             <h5 style="text-align:center">{{ product.name }} - <p>${{ product.price }}</p>
 			</h5>
