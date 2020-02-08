@@ -24,19 +24,8 @@ background: #c0392b;  /* fallback for old browsers */
     font-family: 'Zhi Mang Xing', cursive;
 
 }
-.jumbotron{
-    background: url("../static/imgs/sale.jpg") no-repeat center center; 
-    -webkit-background-size: 100% 100%;
-    -moz-background-size: 100% 100%;
-    -o-background-size: 100% 100%;
-    background-size: 100% 100%;
-
-}
 
 
-.navbar{
-    margin-bottom: 100px;
-}
 .cart-item{
     margin-left: 5px;
 }

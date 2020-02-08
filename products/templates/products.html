@@ -3,10 +3,11 @@
 {% block content %}
 <main role="main">
 <div class="container text-center">
-<div class="row text-center">
+<div class="row text-center logo">
 <div class="col-12">
-<h1 class="display-1 main-heading">Viking POP </h1>
-<img src="static/imgs/logo.png" alt="Logo" class="product">
+<img  src="static/imgs/pop_symbol.jpg" alt="Logo" >
+<h1 class="display-1 " style="font-family: 'Slabo 27px', serif;">Viking POP </h1>
+
 </div>
 
 </div>
@@ -22,7 +23,7 @@
         </div>
       </section> -->
       <div class="album py-5 bg-light">
-        <div class="container text-center"> <h1>Ten dollar POPS</h1>
+        <div class="container text-center"> <h1>Popular POPS</h1>
             <div class="row row-flex">
            
 	{% for product in products %}
@@ -59,7 +60,7 @@
  
 
  <div class="container"  >
- <h1 class="display-1 text-center" >Categories</h1>
+ <h3 class="display-1 text-center" style="font-family: 'Slabo 27px', serif;" >Categories</h3>
  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" >
   <div class="carousel-inner">
 {% for category in categories %}
