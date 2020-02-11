@@ -12,3 +12,11 @@ class ProductTests(TestCase):
     def test_str(self):
         test_name = Product(name='A product')
         self.assertEqual(str(test_name), 'A product')
+
+
+# class Test_urls(TestCase):
+#     """
+#     Here we'll define the tests that we'll run against our
+#     Product Urls
+#     """
+#     def test_product_url(self):
