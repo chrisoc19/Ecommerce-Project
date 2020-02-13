@@ -35,4 +35,13 @@ def adjust_cart(request, id):
         cart.pop(id)
 
     request.session['cart'] = cart
-    return redirect(reverse('view_cart'))
+    return redirect(reverse('product_home'))
+
+
+def remove_from_cart(request, id):
+    cart = request.session.get('cart', {})
+    cart.pop(id)
+
+    
+    request.session['cart'] = cart
+    return redirect(reverse('product_home'))
