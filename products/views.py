@@ -13,21 +13,17 @@ def all_products(request):
 
 def product_home(request):
     products = Product.objects.all()
-    form = SizeForm() 
     categories = Category.objects.all()
     return render(request, "product_home.html", {"products": products,
-                                                 "categories": categories, 
-                                                 "form":form})
+                                                 "categories": categories})
 
 
 def products_detail(request, product_slug):
     products = Product.objects.all()
-    form = SizeForm()        
     if product_slug:
         products = get_object_or_404(Product, slug=product_slug)
 
-    return render(request, "products_detail.html", {"products": products,
-                                                     "form":form})
+    return render(request, "products_detail.html", {"products": products})
 
 
 def all_categories(request):
