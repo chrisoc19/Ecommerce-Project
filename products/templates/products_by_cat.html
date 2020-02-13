@@ -1,6 +1,16 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+<div class="container text-center">
+<div class="row text-center logo">
+<div class="col-12">
+<img  src="static/imgs/pop_symbol.jpg" alt="Logo" >
+<h1 class="display-1 " style="font-family: 'Slabo 27px', serif;">Viking POP </h1>
+
+</div>
+
+</div>
+</div>
 <h1 class="text-center">{{ category.name }}</h1>
 <div class="row row-flex">
 	{% for product in products %}
