@@ -90,10 +90,8 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-            'USER': 'django',                   
-            'PASSWORD': 'mydb123', 
-            
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3')
+     
         }
     }
 # DATABASES = {
@@ -154,6 +152,7 @@ AWS_ACCESS_KEY_ID = os.environ.get("AWS_SECRET_KEY_ID")
 AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
 
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_DEFAULT_ACL = None
 
 
 STATICFILES_LOCATION = 'static'
