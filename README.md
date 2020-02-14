@@ -73,9 +73,20 @@ The Home page will immediately inform the user of the site’s purpose, promotin
 - [Psycopg2](https://pypi.org/project/psycopg2/) as PostgreSQL database adapter for Python.
 
 - [PIP](https://pip.pypa.io/en/stable/installing/) for installation of tools needed in this project.
+
 - [Git](https://gist.github.com/derhuerst/1b15ff4652a867391f03) to handle version control.
+
 - [GitHub](https://github.com/) to store and share all project code remotely.
+
 - [Balsamiq](https://balsamiq.com/) to create the wireframes for this project.
+
+- [PostgreSQL](https://www.postgresql.org/) for production database, provided by heroku.
+
+- [SQlite3](https://www.sqlite.org/index.html) for development database, provided by django.
+
+- [Bootstrap](https://getbootstrap.com/docs/4.0/getting-started/introduction/) to simplify the structure of the website and make the website responsive easily.
+
+- [Google Fonts](https://fonts.google.com/) to style the website fonts.
 
 ## Testing
 
