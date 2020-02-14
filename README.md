@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.com/chrisoc19/Ecommerce-Project.svg?branch=master)](https://travis-ci.com/chrisoc19/Ecommerce-Project)
-# Your Project's Name
+# Viking POPS
 
 In this project I am focusing on creating a website aimed towards the POP collector community.
 
@@ -12,7 +12,7 @@ The primary target audience is anyone that has an interest in POP figures, wheth
 ## UX
 My wire frames were created in Balsamiq and can be found here:
 
-[wire Frames]()
+[wire Frames](https://github.com/chrisoc19/Ecommerce-Project/blob/master/mockups/New%20Project%20(2)%20(2).pdf)
 I choose to design a simple yet elegant site.
 The navigation bar is responsive having break points for smaller, medium and large screens. The navigation links disappear on screen width below 992 pixels and a burger menu icon appears top left. When the burger icon is clicked, it brings a side navigation bar across from the left.
  
