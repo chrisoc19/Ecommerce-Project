@@ -1,18 +1,26 @@
 [![Build Status](https://travis-ci.com/chrisoc19/Ecommerce-Project.svg?branch=master)](https://travis-ci.com/chrisoc19/Ecommerce-Project)
 # Your Project's Name
 
-One or two paragraphs providing an overview of your project.
+In this project I am focusing on creating a website aimed towards the POP collector community.
 
-Essentially, this part is your sales pitch.
+Users will also be able to register and login to purchase items.
+
+This project will use a postgres database, and the application itself will be set up using the Django web framework.
+
+The primary target audience is anyone that has an interest in POP figures, whether they are casual collects or just shopping for the perfect gift. I Have added many diffrent types of POP figures to increase my target audience, Such as Disney figures, Looney Tunes for the younger audience and real life famous people and gaming figures for the older audience. In my opinion there is something for everyone. 
  
 ## UX
  
-Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
+The site itself will follow standard web design conventions and so the layout and initial use of the site should feel immediately recognisable to almost all users, with those lacking experience in web browsing finding the website to be self-explanatory and easy to use/navigate.
 
-In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
-- As a user type, I want to perform an action, so that I can achieve a goal.
+The Home page will immediately inform the user of the site’s purpose, promoting the products that sell best. 
 
-This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included as a pdf file in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
+## User Stories
+
+- As a user I’d like to be able to buy specific branded merchandise from the website
+- As a user, I’d like for the website to be user-friendly and easy to navigate
+- As a user, I’d like to be able to search the website/database for the products in the store that match the search criteria
+- As a user, I'd like to be able to access the data and experience all the site has to offer, regardless of device and browser type being used
 
 ## Features
 
