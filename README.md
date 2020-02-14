@@ -10,6 +10,11 @@ This project will use a postgres database, and the application itself will be se
 The primary target audience is anyone that has an interest in POP figures, whether they are casual collects or just shopping for the perfect gift. I Have added many diffrent types of POP figures to increase my target audience, Such as Disney figures, Looney Tunes for the younger audience and real life famous people and gaming figures for the older audience. In my opinion there is something for everyone. 
  
 ## UX
+My wire frames were created in Balsamiq and can be found here:
+
+[wire Frames]()
+I choose to design a simple yet elegant site.
+The navigation bar is responsive having break points for smaller, medium and large screens. The navigation links disappear on screen width below 992 pixels and a burger menu icon appears top left. When the burger icon is clicked, it brings a side navigation bar across from the left.
  
 The site itself will follow standard web design conventions and so the layout and initial use of the site should feel immediately recognisable to almost all users, with those lacking experience in web browsing finding the website to be self-explanatory and easy to use/navigate.
 
@@ -17,33 +22,60 @@ The Home page will immediately inform the user of the site’s purpose, promotin
 
 ## User Stories
 
-- As a user I’d like to be able to buy specific branded merchandise from the website
-- As a user, I’d like for the website to be user-friendly and easy to navigate
-- As a user, I’d like to be able to search the website/database for the products in the store that match the search criteria
-- As a user, I'd like to be able to access the data and experience all the site has to offer, regardless of device and browser type being used
+- As a user I’d like to be able to find and buy from the website.
+- As a user, I’d like for the website to be user-friendly and easy to navigate.
+- As a user, I’d like to be able to search the website/database for the products in the store that match the search criteria.
+- As a user, I'd like to be able to access the data and experience all the site has to offer, regardless of device and browser type being used.
+- As a user , I expect feedback from the website I am using when I interact with it, I expect pop ups and modals to inform me when my forms have been completed and sent correctly. Or to let me know when an error has ocurred and what to do next.
 
 ## Features
+- Navbar - Allows users to easily Navigate the site, displaying the how many items in the cart and also a way to search for a specific product and also allows the user to log in and out.
 
-In this section, you should go over the different parts of your project, and describe each in a sentence or so.
- 
-### Existing Features
-- Feature 1 - allows users X to achieve Y, by having them fill out Z
-- ...
+- The Home page - This page which allows users to quickly see the most popular products and other categories on offer.
 
-For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
+- All Products - This page displays all the products the site offers.
 
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
+- Product details - When a user clicks on a product it redirects to a page with an extra information about the product and an extra product image.
+
+- Categories Page - This page has a list of all the products the site offers, once the user chooses a category, the products are then filtered to show only those products.
+
+- Login/Logout - If a user is not logged in a login button is displayed which will take the user to the login page, If the user is logged in a logout button is displayed which will qucickly and easily log the user out, a user needs to be logged in to make a purchase.
+
+- Shopping Cart - This page shows the items the user have added for purchase it displays the product image, the price, the quantity and the ability to add more of a product or remove the product from the shopping cart. The user can the proceed to checkout or go back to do more shopping.
+
+- Checkout page - This is a simple page thats shows the name, quantity and price of each product, then underneath a payment form is displayed which takes the users shipping address and also takes the users payment method.
+
+
 
 ### Features Left to Implement
-- Another feature idea
+- In the future I would like to add more categories of POP Figures.
+- In the future I would like to add a way for the user to contact the site.
 
 ## Technologies Used
+- [Python](https://www.python.org/) The project uses **Python**.
 
-In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
+- [Django](https://www.djangoproject.com/) as python web framework for rapid development and clean design.
 
-- [JQuery](https://jquery.com)
-    - The project uses **JQuery** to simplify DOM manipulation.
+- [Stripe](https://stripe.com/en-se) as payment platform to validate and accept credit card payments securely.
 
+- [Travis](https://travis-ci.org/) for continuous integration.
+
+- [AWS S3 Bucket](https://aws.amazon.com/) to store images entered into the database.
+
+- [Boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html) to enable creation, configuration and management of AWS S3.
+
+- [Django Heroku](https://pypi.org/project/django-heroku/) to improve deployment of django projects on heroku.
+
+- [Django Storages](https://django-storages.readthedocs.io/en/latest/) a collection of custom storage backends with django to work with boto3 and AWS S3.
+
+- [Gunicorn](https://pypi.org/project/gunicorn/) WSGI HTTP Server for UNIX to aid in deployment of the Django project to heroku.
+
+- [Psycopg2](https://pypi.org/project/psycopg2/) as PostgreSQL database adapter for Python.
+
+- [PIP](https://pip.pypa.io/en/stable/installing/) for installation of tools needed in this project.
+- [Git](https://gist.github.com/derhuerst/1b15ff4652a867391f03) to handle version control.
+- [GitHub](https://github.com/) to store and share all project code remotely.
+- [Balsamiq](https://balsamiq.com/) to create the wireframes for this project.
 
 ## Testing
 
