@@ -4,7 +4,7 @@
 <div class="container" >
 <div class="row text-center">
 <div class="col-12">
-<h3 class="display-1 main-heading">The POP Shop</h3>
+<h3 class="display-4 main-heading" style="margin-top:50px">{{ products.name }}</h3>
 </div>
 
 </div>
@@ -16,7 +16,7 @@
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
 
   </ol>
-  <div class="carousel-inner" style="border:1px solid black;" >
+  <div class="carousel-inner" >
     <div class="carousel-item active">
       <img   class="d-block w-100 " src="{{ MEDIA_URL }}{{ products.image2 }}" alt="First slide" height="500px" width="358px"> 
     </div>
@@ -36,22 +36,8 @@
 		</div>
 		<div class="col-md-7" style="padding-left: 100px; padding-top: 100px;">
 
-        <h2 style="color: #555;">{{ products.name }}</h2>
-        <p>{{ products.description }}</p>
-
-<!-- 
-      <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-   sizes
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">{{ products.size  }}</a>
-  </div>
-</div> -->
-  
-    
-
-        <p>${{ products.price }}</p>
+        <h2 style="color: #555;">{{ products.description }}</h2>
+        <h2>${{ products.price }}</h2>
         <form method="post" class="d-flex justify-content-left" action="{% url 'add_to_cart' products.id %}">
 		{% csrf_token %}
 		<!-- Default input -->

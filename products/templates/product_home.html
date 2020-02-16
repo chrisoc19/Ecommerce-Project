@@ -3,56 +3,45 @@
 {% block content %}
 
 
-<h1 class="text-center">All Products</h1>
-<div class="row row-flex">
-	{% for product in products %}
-    
 
-	<div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
-		<div class="panel-body">
-			<a href="{{product.get_absolute_url}}"><div class="product" style=" background-image: url('{{ MEDIA_URL }}{{ product.image }}');";>
-            </div></a>
-            <h5 style="text-align:center">{{ product.name }} - <p>${{ product.price }}</p>
-			</h5>
-            <!-- <form method="post" >
-    {% csrf_token %}
-    {{form}}
-    <button type="submit">submit</button>
-    </form> -->
+<div class="album py-5">
+			<div class="container text-center">
+				<h1 class="text-center">{{ category.name }}</h1>
+				<div class="row row-flex">
 
-            <!-- <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-   sizes
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">{{ products.size  }}</a>
-  </div>
-</div> -->
+					{% for product in products %}
 
-            <form method="post" class="d-flex justify-content-center" action="{% url 'add_to_cart' product.id %}">
-				{% csrf_token %}
 
-                <!-- <label for="size">Choose a size:</label>
-                <select id="size" name="size">
-                    <option value="small" name="size">Small</option>
-                    <option value="medium" name="size">Medium</option>
-                    <option value="large" name="size">Large</option>
-                </select> -->
-                
-				<input type="number" value="1" aria-label="Search" min="0" class="form-control"  name="quantity"style="width: 100px">
-				<button class="btn btn-primary btn-md my-0 p" type="submit">Add to cart
+					<div
+						class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
+						<div class="panel-body">
+							<a href="{{product.get_absolute_url}}">
+								<div class="product"
+									style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
+							
+							<h5 style="text-align:center">{{ product.name }}</a> - <p>${{ product.price }}</p>
+							</h5>
+							<form method="post" class="d-flex justify-content-center"
+								action="{% url 'add_to_cart' product.id %}">
+								{% csrf_token %}
+								<!-- Default input -->
+								<input type="number" value="1" aria-label="Search" min="0" class="form-control"  name="quantity"style="width: 100px">
+								<button class="btn btn-primary btn-md my-0 p" type="submit">Add to cart
                 <i class="fas fa-shopping-cart ml-1"></i>
               </button>
 
-			</form>
+							</form>
+						</div>
+					</div>
+
+
+
+					{% endfor %}
+				</div>
+
+
+			</div>
 		</div>
-	</div>
-    
-			
-    
-	{% endfor %}
-</div>
-			
 			
 
 

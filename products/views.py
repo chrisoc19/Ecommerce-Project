@@ -36,7 +36,7 @@ def products_by_category(request, category_slug):
     if category_slug:
         category = get_object_or_404(Category, slug=category_slug)
         products = products.filter(category=category)
-    return render(request, "products_by_cat.html", {
+    return render(request, "product_home.html", {
                                                "categories": categories,
                                                "products": products,
                                                "category": category})
