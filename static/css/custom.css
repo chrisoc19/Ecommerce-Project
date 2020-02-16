@@ -8,12 +8,11 @@ body {
     
 }
 
-
-/* .jumbotron{
-background: #c0392b;  /* fallback for old browsers */
-/* background: -webkit-linear-gradient(to right, #8e44ad, #c0392b);  Chrome 10-25, Safari 5.1-6 */
-/* background: linear-gradient(to right, #8e44ad, #c0392b); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+.d-flex {
+    display: -ms-flexbox!important;
+    display: flex!important;
+    margin-bottom: 35px;
+}
 
   /* margin-top: 100px; */
 } */
@@ -84,9 +83,7 @@ footer {
     margin: 0 auto;
 }
 
-.product_detail:hover{
-    background-image: url('{{ MEDIA_URL }}{{ products.image2 }}')
-}
+
 .products {
     text-align: center;
     width: 150px;
@@ -115,9 +112,6 @@ caption p {
    margin-right: 47%;
 }
 
-.happiness{
-    background-color: pink;
-}
 
 
  /* Product detail page */
