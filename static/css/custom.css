@@ -8,14 +8,14 @@ body {
     
 }
 
+
+
+  /* add to cart button */
 .d-flex {
     display: -ms-flexbox!important;
     display: flex!important;
     margin-bottom: 35px;
 }
-
-  /* margin-top: 100px; */
-} */
 
  /* Landing Page */
 
@@ -78,18 +78,12 @@ footer {
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
     margin: 0 auto;
 }
 
 
-.products {
-    text-align: center;
-    width: 150px;
-    height: 150px;
-    margin: 0 auto;
-}
 
 caption p {
     word-wrap: break-word;
