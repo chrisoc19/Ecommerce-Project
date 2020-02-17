@@ -3,6 +3,7 @@
 {% load bootstrap_tags %}
 
 {% block content %}
+{% if product_count > 0 %}
 <heading class="col-11 col-md-8 col-lg-6 text-center">
 	<h1>Your shopping cart</h1>
 </heading>
@@ -93,4 +94,11 @@
 		</div>
 	</div>
 </div>
+{% endif %}
+<div class="text-center">
+<h1>Your cart is empty!</h1>
+<a class="btn btn-primary" href="{% url 'product_home' %}" role="button">Shop</a>
+</div>
+
+
 {% endblock %}
