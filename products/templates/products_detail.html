@@ -4,7 +4,7 @@
 <div class="container" >
 <div class="row text-center">
 <div class="col-12">
-<h3 class="display-4 main-heading" style="margin-top:50px">{{ products.name }}</h3>
+<h3 class="display-4 main-heading" style="margin-top:50px; font-family: 'Poppins', sans-serif;">{{ products.name }}</h3>
 </div>
 
 </div>
@@ -35,7 +35,7 @@
 </div>
 		</div>
 		<div class="col-md-7" style="padding-left: 100px; padding-top: 100px;">
-
+        <h2><strong>{{ products.brand }}</strong></h2>
         <h2 style="color: #555;">{{ products.description }}</h2>
         <h2>${{ products.price }}</h2>
         <form method="post" class="d-flex justify-content-left" action="{% url 'add_to_cart' products.id %}">

@@ -23,6 +23,7 @@ class Category(models.Model):
 class Product(models.Model):
     category = models.ForeignKey(Category, null=True)
     name = models.CharField(max_length=254, default='')
+    brand = models.CharField(max_length=254, default='')
     slug = models.SlugField(max_length=254,  unique=True)
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
