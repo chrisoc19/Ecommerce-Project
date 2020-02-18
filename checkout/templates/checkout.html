@@ -16,11 +16,7 @@
 <section class="page-section about" id="architecture">
         <div class="container">
 
-            <!-- Heading -->
-            <h2
-                class="cat-heading page-section-heading text-center text-uppercase text-secondary mb-0">Checkout</h2>
-            
-            <!-- /Heading -->
+     
 
             <!-- Icon Divider -->
 
@@ -30,14 +26,7 @@
             </div><br><br>
             
             <!-- /Icon Divider -->
-
-            <!-- Checkout content -->
-            <div class="container bg-light">
-  <div class="py-5 text-center">
-   
-    </div>
-
-  <div class="row bg-light">
+ <!-- <div class="row bg-light">
     <div class="col-md order-md-2 mb-4">
       <h4 class="d-flex justify-content-between align-items-center mb-3">
         <span class="text-muted">Your cart</span>
@@ -58,31 +47,43 @@
         </li>
       </ul>
     </div>
-</div>
+</div> -->
+            <!-- Checkout content -->
+            <div class="container ">
+  <div class="py-5 text-center">
+      <!-- Heading -->
+       <!-- <h2
+                class="cat-heading page-section-heading text-center text-uppercase text-secondary mb-0">Checkout</h2>  -->
+      
+            <!-- /Heading -->
+ 
+    </div>
+    
 
-            
+            <legend class="form-inline-001 text-center">Payment Details</legend><br><br>
             <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
-
-                <legend class="form-inline-001">Payment Details</legend><br><br>
+<div class="row" style="padding-left:250px;">
+                
 
                 <div id="credit-card-errors" style="display: none;">
                     <div id="stripe-error-message"></div>
                 </div>
-
-                <div
-                    class="form-group form-inline-001 col-xs-12 col-sm-12 col-md-4 col-lg-12 col-xl-12">
+               
+                <div>
+                   <h5>Delivery details</h5>
                      {{ order_form | as_bootstrap }}
                 </div>
 
-                <div
-                    class="form-group form-inline-001 col-xs-12 col-sm-12 col-md-4 col-lg-12 col-xl-12">
+                <div style="margin-left:20px">
+                <h5>Card details</h5>
                     {{ payment_form | as_bootstrap  }}
-                </div>
+                
+                
 
                 {% csrf_token %}
-                <div
-                    class="form-group form-inline-001 col-xs-12 col-sm-2 col-md-4 col-lg-12 col-xl-12">
-                    <input
+               
+              
+                    <input style="margin-left:4px;"
                         class=" btn btn-primary"
                         id="submit_payment_btn"
                         name="commit"
@@ -91,7 +92,7 @@
                 </div>
 
             </form>
-        </div>
+     </div>   </div>
 
         <!-- /Checkout content -->
 
