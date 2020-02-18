@@ -9,7 +9,7 @@
 				<h1 class="text-center">{{ category.name }}</h1>
 				<div class="row row-flex">
 
-					{% for product in products %}
+					{% for product in items %}
 
 
 					<div
@@ -19,7 +19,9 @@
 								<div class="product"
 									style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
 							
-							<h5 style="text-align:center">{{ product.name }}</a> - <p>${{ product.price }}</p>
+							<h5 style="text-align:center">{{ product.name }}</a>
+                            <p>{{ product.brand }}
+                            <p>${{ product.price }}</p>
 							</h5>
 							<form method="post" class="d-flex justify-content-center"
 								action="{% url 'add_to_cart' product.id %}">
@@ -38,12 +40,17 @@
 
 					{% endfor %}
 				</div>
-
+       
 
 			</div>
 		</div>
-			
+		
+      {% include "pagination.html" %} 
+          
+
+    
 
 
+ 
 
 {% endblock %}
