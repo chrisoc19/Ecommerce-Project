@@ -10,7 +10,14 @@ body {
     
     
 }
-
+.jumbotron-cover-image {
+        position: relative;
+        background: #000 url("https://himpfencom.ams3.cdn.digitaloceanspaces.com/codepen-asset-hosting/yeshi-kangrang-276043-unsplash.jpg") center center;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        color: #fff;
+}
 
 
   /* add to cart button */
