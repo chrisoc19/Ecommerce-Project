@@ -26,9 +26,38 @@
             </div><br><br>
             
             <!-- /Icon Divider -->
- <!-- <div class="row bg-light">
-    <div class="col-md order-md-2 mb-4">
-      <h4 class="d-flex justify-content-between align-items-center mb-3">
+ 
+            <div id="credit-card-errors" style="display: none;">
+	<div id="stripe-error-message"></div>
+</div>
+<legend class="form-inline-001 text-center">Payment Details</legend>
+
+
+<form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      {{ order_form | as_bootstrap }}
+    </div>
+    <div class="col-sm">
+      
+	{{ payment_form | as_bootstrap  }}
+    
+    	{% csrf_token %}
+	<input style="margin-left:4px;"
+     class=" btn btn-primary"
+      id="submit_payment_btn"
+      name="commit"
+      type="submit"
+      value="Submit Payment">
+      </div>
+      <div class="col-sm">
+<div class="bg-light">
+    <div >
+      <h4 class=" text-align-center">
         <span class="text-muted">Your cart</span>
       </h4>
        {% for item in cart_items %}
@@ -47,64 +76,22 @@
         </li>
       </ul>
     </div>
-</div> -->
-            <!-- Checkout content -->
-            <div class="container ">
-  <div class="py-5 text-center">
-      <!-- Heading -->
-       <!-- <h2
-                class="cat-heading page-section-heading text-center text-uppercase text-secondary mb-0">Checkout</h2>  -->
-      
-            <!-- /Heading -->
- 
+</div>
+
+      </div>
     </div>
-    
-
-            <legend class="form-inline-001 text-center">Payment Details</legend><br><br>
-            <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
-<div class="row" style="padding-left:250px;">
-                
-
-                <div id="credit-card-errors" style="display: none;">
-                    <div id="stripe-error-message"></div>
-                </div>
-               
-                <div>
-                   <h5>Delivery details</h5>
-                     {{ order_form | as_bootstrap }}
-                </div>
-
-                <div style="margin-left:20px">
-                <h5>Card details</h5>
-                    {{ payment_form | as_bootstrap  }}
-                
-                
-
-                {% csrf_token %}
-               
-              
-                    <input style="margin-left:4px;"
-                        class=" btn btn-primary"
-                        id="submit_payment_btn"
-                        name="commit"
-                        type="submit"
-                        value="Submit Payment">
-                </div>
-
-            </form>
-     </div>   </div>
-
-        <!-- /Checkout content -->
-
-    </div>
-
-    <br><br>
-</div>
-</div>
-</div>
+  </div>
 </div>
 
-</section>
+	
+
+
+
+
+
+
+
+</form>
 
 
 {% endblock %}
