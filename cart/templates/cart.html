@@ -53,12 +53,7 @@
 						<td class="col-sm-1 col-md-1 text-center"><strong>${{ item.product.price }}</strong></td>
 						<td class="col-sm-1 col-md-1 text-center"><strong>{{item.quantity}}</strong></td>
 						<td class="col-sm-1 col-md-1">
-
-                            <form action="{% url 'remove_from_cart' item.id %}" method="POST"
-								class="d-flex justify-content-left">
-								{% csrf_token %}
-								<button class="btn btn-danger" type="submit"><span class="glyphicon glyphicon-remove">Remove</span> </button>
-							</form>
+                        <a href="{% url 'remove_from_cart' item.id %}" ><i class="fas fa-minus-circle"></i></a>
 							</td>
 							
 					</tr>

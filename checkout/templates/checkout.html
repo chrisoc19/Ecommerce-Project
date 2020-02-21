@@ -58,16 +58,16 @@
             <!-- /Heading -->
  
     </div>
-    
+     <div id="credit-card-errors" style="display: none;">
+                    <div id="stripe-error-message"></div>
+                </div>
 
             <legend class="form-inline-001 text-center">Payment Details</legend><br><br>
             <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
-<div class="row" style="padding-left:250px;">
+<div class="row" style="padding-left:250px; box-shadow: 10px 10px 1px 10px;">
                 
 
-                <div id="credit-card-errors" style="display: none;">
-                    <div id="stripe-error-message"></div>
-                </div>
+               
                
                 <div>
                    <h5>Delivery details</h5>

@@ -27,7 +27,10 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = ['8000-b951e69b-1b7b-4012-b418-0e4ac7b444dc.ws-eu01.gitpod.io',
-                 'localhost','ecommerce--project.herokuapp.com' ]
+                 'localhost','ecommerce--project.herokuapp.com',  ]
+                 
+                 
+            # 'googlefusion*.herokuapp.com'
 
 
 # Application definition
