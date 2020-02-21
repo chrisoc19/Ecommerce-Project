@@ -128,16 +128,8 @@ If you wish to run this code locally then please follow the instructions below.
 7. Create a secret key and set as environment variable.
     * MacOS and Linux ````export SECRET_KEY=<secret key>````
     * Windows ````set SECRET_KEY=<secret key>````
-8. Connect your MongoDB database to the application. If you have not created a MongoDB database please follow the 
-instructions under the heading Create a MongoDB account.
-    * Set MongoDB URI as environment variable.
-        * MacOS and Linux ````export MONGO_URI=<mongo_uri>````
-        * Windows ````set MONGO_URI=<mongo_uri>````
-    * Create a database and three collections. One called 'Categories', one called 'Exercise' and the third 'users'.
-    * Set MongoDB database name as environment variable.
-        * MacOS and Linux ````export MONGO_DBNAME=<mongo_DBNAME>````
-        * Windows ````set MONGO_DBNAME=<mongo_DBNAME>````
-9. Open up a terminal and run ````flask run````.
+8. Connect your Aws database to the application.
+9. Open up a terminal and run ````python3 manage.py runserver````.
 10. Navigate to the address the terminal returns to view the project.
 
 #### Deploy to Heroku
@@ -156,11 +148,8 @@ here to download and install [Heroku CLI](https://devcenter.heroku.com/articles/
 2. Select _New_ > _Create New App_ and fill out the details required then hit _Create App_.
 3. Select _Settings_ > _Reveal Config Vars_
     * Enter in the following environment variables:
-        * AWS_ACCESS_KEY_ID: AKIAQCDOPVBUQEKBV4N3
-        * AWS_SECRET_ACCESS_KEY: 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
-        * DATABASE_URL : postgres://xhkqyxdtojaikd:86f3a640cefc00bfff7a789c99792af5a8fc40a0b2dd25220767c131a9bd547d@ec2-54-217-235-87.eu-west-1.compute.amazonaws.com:5432/d1tcs8ocagppgm
-        * DISABLE_COLLECTSTATIC : 1
-      
+        * AWS_ACCESS_KEY_ID
+        * AWS_SECRET_ACCESS_KEY
 4. Download the code from the Github repository [here](https://github.com/chrisoc19/workout).
 5. Click on _Clone_ or _download then Download ZIP_. This will download the code into a ZIP folder locally on your computer.
 6. Uncompress the ZIP folder.
