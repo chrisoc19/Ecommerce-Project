@@ -111,14 +111,14 @@ If this section grows too long, you may want to split it off into a separate fil
 ## Deployment
 
 The project has been deployed on Heroku to host the site, and all git changes can be seen on my github profile. My deployed version will not have the following code:
-There are no differences between the deployed version of the project found [here](https://workout-app-flask-mongo.herokuapp.com/) 
+There are no differences between the deployed version of the project found [here](https://ecommerce--project.herokuapp.com/) 
 and its development version.
 
 #### How to deploy the code locally
 
 If you wish to run this code locally then please follow the instructions below.
 
-1. Download the code from the Github repository from [here](https://github.com/chrisoc19/workout).
+1. Download the code from the Github repository from [here](https://github.com/chrisoc19/Ecommerce-Project).
 2. Click on _Clone_ or _download then Download ZIP_. This will download the code into a ZIP folder locally on your computer.
 3. Uncompress the ZIP folder.
 4. Create a virtual environment. 
