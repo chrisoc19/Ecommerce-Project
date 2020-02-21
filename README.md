@@ -138,7 +138,7 @@ I deployed the site to Github with the following steps:
 
 To deploy the page locally:
 
-1.Go to the github [Link](https://github.com/chrisoc19/Ecommerce-Project)
+1. Go to the github [Link](https://github.com/chrisoc19/Ecommerce-Project)
 2. Click on the Clone/download button and copy the URL
 3. Set up and install your own Stripe and uploadcare accounts
 4. To run the application locally, type python3 manage.py runserver 8080 in bash
