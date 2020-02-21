@@ -175,12 +175,9 @@ dashboard.
 
 ## Credits
 
-### Content
-- The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
-
 ### Media
-- The photos used in this site were obtained from ...
+- The photos used in this site were obtained from a google search.
 
 ### Acknowledgements
 
-- I received inspiration for this project from X
+- Id like to thank code institute for there teaching and helping during the process of this project.
