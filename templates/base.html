@@ -63,7 +63,7 @@
 				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 			</form>
 		</div>
-        <a class="nav-item cart-item" href="{% url 'view_cart' %}"> {% if product_count > 0 %}<i class="fas fa-shopping-cart"></i>{% endif %}
+        <a class="nav-item cart-item" href="{% url 'view_cart' %}"> {% if product_count > 0 %}<i class="fas fa-shopping-cart fa-2x"></i>{% endif %}
 				{% if product_count > 0 %}
 				<label class="badge badge-warning">{{ product_count }}</label>
 				{% endif %}
@@ -102,41 +102,26 @@
 
  
 
-    <!-- Social icons -->
-    <div class="pb-4">
-    
-      <a href="https://www.facebook.com/chris.oconnor.3597" target="_blank">
-        <i class="fab fa-facebook-f mr-3 "></i>
-      </a>
-
-      <a href="https://twitter.com" target="_blank">
-        <i class="fab fa-twitter mr-3"></i>
-      </a>
-
-      <a href="https://www.youtube.com" target="_blank">
-        <i class="fab fa-youtube mr-3"></i>
-      </a>
-
-      <a href="https://plus.google.com" target="_blank">
-        <i class="fab fa-google-plus-g mr-3"></i>
-      </a>
-
-      <a href="https://pinterest.com/mdbootstrap" target="_blank">
-        <i class="fab fa-pinterest mr-3"></i>
-      </a>
-
-      <a href="https://github.com/chrisoc19" target="_blank">
-        <i class="fab fa-github mr-3"></i>
-      </a>
-
-    </div> 
  <!-- Social icons -->
 
     <!--Copyright-->
-    <div class="footer-copyright py-3">
-    <p>Created by Chris O'Connor</p>
-      © 2019 Copyright
+ <div class ="container-fluid">
+  <div class ="row">
+    <div class ="col-md-12 col-sm-12">
+       
+					<i class="fa fa-phone"></i>
+					<p> Chris O'Connor Designs <a href="mailto:chrisoconnor904@yahoo.com.au">POP@Email.com</p></a>
+                    <p>+91 22-27782183</p>
+                     © 2019 Copyright
+
     </div>
+   
+     </div>
+  </div>
+</div>
+    
+				
+     
     <!--/.Copyright-->
 
   </footer>

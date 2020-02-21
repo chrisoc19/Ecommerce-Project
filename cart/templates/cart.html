@@ -3,13 +3,20 @@
 {% load bootstrap_tags %}
 
 {% block content %}
-{% if product_count > 0 %}
-<heading class="col-11 col-md-8 col-lg-6 text-center">
+
+			<div class="container text-center">
+				<div class="row row-flex">
+					<div
+						class="col">
+						<div class="panel-body">
+							{% if product_count > 0 %}
+<div class="album py-5" >
+<div class="container">
+<heading class="col">
 	<h1>Your shopping cart</h1>
 </heading>
-<div class="container">
 	<div class="row">
-		<div class="col-sm-12 col-md-10 col-md-offset-1">
+		<div class="col">
 			<table class="table table-hover">
 				<thead>
 					<tr>
@@ -25,14 +32,14 @@
 					<tr>
 						<td class="col-sm-8 col-md-6">
 							<div class="media">
-								<a class="thumbnail pull-left" href="#">
+								<a class="thumbnail pull-left" href="{{item.product.get_absolute_url}}">
 									<img class="media-object" src="{{ MEDIA_URL }}{{ item.product.image }}" style="width: 72px; height: 72px;"> </a>
 									<div class="media-body">
 										<h4 class="media-heading"><a
 												href="{{item.product.get_absolute_url}}">{{ item.product.name }}</a>
 										</h4>
 										<h5 class="media-heading"> Category : <a
-												href="#">{{ item.product.category }}</a></h5>
+												href="{{item.product.category.get_absolute_url}}">{{ item.product.category }}</a></h5>
 										<span>Status: </span><span class="text-success"><strong>In Stock</strong></span>
 									</div>
 							</div>
@@ -53,7 +60,7 @@
 						<td class="col-sm-1 col-md-1 text-center"><strong>${{ item.product.price }}</strong></td>
 						<td class="col-sm-1 col-md-1 text-center"><strong>{{item.quantity}}</strong></td>
 						<td class="col-sm-1 col-md-1">
-                        <a href="{% url 'remove_from_cart' item.id %}" ><i class="fas fa-minus-circle"></i></a>
+                        <a href="{% url 'remove_from_cart' item.id %}" ><i class="fas fa-minus-circle  " style= "color: red;"></i></a>
 							</td>
 							
 					</tr>
@@ -96,5 +103,20 @@
 <a class="btn btn-primary" href="{% url 'product_home' %}" role="button">Shop</a>
 </div>
 {% endif %}
+</div>
+							
+						</div>
+					</div>
+
+
+
+				
+				</div>
+       
+
+			</div>
+	
+		
+
 
 {% endblock %}
