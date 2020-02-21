@@ -110,67 +110,39 @@ If this section grows too long, you may want to split it off into a separate fil
 
 ## Deployment
 
-The project has been deployed on Heroku to host the site, and all git changes can be seen on my github profile. My deployed version will not have the following code:
-There are no differences between the deployed version of the project found [here](https://ecommerce--project.herokuapp.com/) 
-and its development version.
+Heroku deployment - this is done as a last step to ensure that all installed packages are included in the requirements.txt file
 
-#### How to deploy the code locally
+1. Sign up for a Heroku account
+2. Install Heroku using bash: sudo snap install heroku --classic
+3. Install dependencies (gunicorn, Pillow, psycopg2, whitenoise, dj_database_url)
+4. Add Whitenoise to middleware inside settings.py
+5. Log into heroku account with heroku login -i
+6. Create a new app in bash: heroku create <app_name>
+7. Copy over uploadcare and Stripe key details from bashrc into Heroku Config vars
+8. Create a Procfile and add the following line: web: gunicorn <PROJECT_FOLDER>.wsgi:application
+9. Add heroku app url to allowed hosts in settings.py, and also change the static directory to STATIC_ROOT
+10. Create the requirements.txt file using bash: pip3 freeze --local > requirements.txt
+11. Commit and push the project to heroku
+- git add .
+- git commit -m "commit name"
+- git push heroku master
+12. Set up Postgre database with heroku addons:create heroku-postgresql
+13. Get the updated databse url by typing heroku config, and copy it into settings.py and Heroku's Config vars
+14. Migrate database and create a superuser to make changes to it'
 
-If you wish to run this code locally then please follow the instructions below.
+I deployed the site to Github with the following steps:
 
-1. Download the code from the Github repository from [here](https://github.com/chrisoc19/Ecommerce-Project).
-2. Click on _Clone_ or _download then Download ZIP_. This will download the code into a ZIP folder locally on your computer.
-3. Uncompress the ZIP folder.
-4. Create a virtual environment. 
-5. Activate the virtual environment.
-6. Install the necessary Python packages in the requirements.txt file.
-    * ````pip3 install -r requirements.txt````
-7. Create a secret key and set as environment variable.
-    * MacOS and Linux ````export SECRET_KEY=<secret key>````
-    * Windows ````set SECRET_KEY=<secret key>````
-8. Connect your Aws database to the application.
-9. Open up a terminal and run ````python3 manage.py runserver````.
-10. Navigate to the address the terminal returns to view the project.
+1. Go to this repository's github [Link](https://github.com/chrisoc19/Ecommerce-Project)
+2. Click on settings --> Github Pages
+3. Select "none" for the Source and then select "master branch"
 
-#### Deploy to Heroku
+To deploy the page locally:
 
-This project was deployed to Heroku and uses Heroku for its production environment. Instructions are below on how to 
-deploy this web application to a production environment in Heroku.
+1.Go to the github [Link](https://github.com/chrisoc19/Ecommerce-Project)
+2. Click on the Clone/download button and copy the URL
+3. Set up and install your own Stripe and uploadcare accounts
+4. To run the application locally, type python3 manage.py runserver 8080 in bash
 
-
-*Git must be installed onto your computer. Instructions for installing Git can be found 
-[here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
-
-**Heroku CLI must be installed in order to deploy to Heroku using these instructions. Please follow the instructions 
-here to download and install [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli).
-
-1. Open up Heroku and navigate to your dashboard.
-2. Select _New_ > _Create New App_ and fill out the details required then hit _Create App_.
-3. Select _Settings_ > _Reveal Config Vars_
-    * Enter in the following environment variables:
-        * AWS_ACCESS_KEY_ID
-        * AWS_SECRET_ACCESS_KEY
-4. Download the code from the Github repository [here](https://github.com/chrisoc19/Ecommerce-Project).
-5. Click on _Clone_ or _download then Download ZIP_. This will download the code into a ZIP folder locally on your computer.
-6. Uncompress the ZIP folder.
-7. Open up a terminal or cmd prompt and login into Heroku CLI.
-    * ````heroku login````
-8. Check the app is present.
-    * ````heroku apps````
-9. A runtime.txt and Procfile have already been created for this project but make sure they are present. If for some 
-reason they are not then follow the steps below to create them.
-    * Runtime.txt
-        * Create a new text file in the root directory of the project and add ‘python-3.6.6’ to the file.
-    * Procfile
-        * In a terminal make sure you are in the root directory of the project then run ````touch Procfile````.
-        * Add the following text to the Procfile ‘web: flask translate compile; gunicorn meat_free:app’.
-10. Add a new git remote for Heroku.
-    * ````git remote add heroku git@heroku.comYOUR_APP_NAME.git````
-11. Push to Heroku.
-    * ````git push heroku master````
-12. Give Heroku a few minutes to get it all set up and then check the activity logs under Activity tab in your Heroku 
-dashboard. 
-13. Once the build is complete click on Open App top right to see the project in action.
 
 
 ## Credits
