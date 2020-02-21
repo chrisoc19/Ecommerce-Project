@@ -150,7 +150,7 @@ here to download and install [Heroku CLI](https://devcenter.heroku.com/articles/
     * Enter in the following environment variables:
         * AWS_ACCESS_KEY_ID
         * AWS_SECRET_ACCESS_KEY
-4. Download the code from the Github repository [here](https://github.com/chrisoc19/workout).
+4. Download the code from the Github repository [here](https://github.com/chrisoc19/Ecommerce-Project).
 5. Click on _Clone_ or _download then Download ZIP_. This will download the code into a ZIP folder locally on your computer.
 6. Uncompress the ZIP folder.
 7. Open up a terminal or cmd prompt and login into Heroku CLI.
