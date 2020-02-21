@@ -110,14 +110,78 @@ If this section grows too long, you may want to split it off into a separate fil
 
 ## Deployment
 
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
+The project has been deployed on Heroku to host the site, and all git changes can be seen on my github profile. My deployed version will not have the following code:
+There are no differences between the deployed version of the project found [here](https://workout-app-flask-mongo.herokuapp.com/) 
+and its development version.
 
-In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
-- Different values for environment variables (Heroku Config Vars)?
-- Different configuration files?
-- Separate git branch?
+#### How to deploy the code locally
 
-In addition, if it is not obvious, you should also describe how to run your code locally.
+If you wish to run this code locally then please follow the instructions below.
+
+1. Download the code from the Github repository from [here](https://github.com/chrisoc19/workout).
+2. Click on _Clone_ or _download then Download ZIP_. This will download the code into a ZIP folder locally on your computer.
+3. Uncompress the ZIP folder.
+4. Create a virtual environment. 
+5. Activate the virtual environment.
+6. Install the necessary Python packages in the requirements.txt file.
+    * ````pip3 install -r requirements.txt````
+7. Create a secret key and set as environment variable.
+    * MacOS and Linux ````export SECRET_KEY=<secret key>````
+    * Windows ````set SECRET_KEY=<secret key>````
+8. Connect your MongoDB database to the application. If you have not created a MongoDB database please follow the 
+instructions under the heading Create a MongoDB account.
+    * Set MongoDB URI as environment variable.
+        * MacOS and Linux ````export MONGO_URI=<mongo_uri>````
+        * Windows ````set MONGO_URI=<mongo_uri>````
+    * Create a database and three collections. One called 'Categories', one called 'Exercise' and the third 'users'.
+    * Set MongoDB database name as environment variable.
+        * MacOS and Linux ````export MONGO_DBNAME=<mongo_DBNAME>````
+        * Windows ````set MONGO_DBNAME=<mongo_DBNAME>````
+9. Open up a terminal and run ````flask run````.
+10. Navigate to the address the terminal returns to view the project.
+
+#### Deploy to Heroku
+
+This project was deployed to Heroku and uses Heroku for its production environment. Instructions are below on how to 
+deploy this web application to a production environment in Heroku.
+
+
+*Git must be installed onto your computer. Instructions for installing Git can be found 
+[here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+
+**Heroku CLI must be installed in order to deploy to Heroku using these instructions. Please follow the instructions 
+here to download and install [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli).
+
+1. Open up Heroku and navigate to your dashboard.
+2. Select _New_ > _Create New App_ and fill out the details required then hit _Create App_.
+3. Select _Settings_ > _Reveal Config Vars_
+    * Enter in the following environment variables:
+        * AWS_ACCESS_KEY_ID: AKIAQCDOPVBUQEKBV4N3
+        * AWS_SECRET_ACCESS_KEY: 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
+        * DATABASE_URL : postgres://xhkqyxdtojaikd:86f3a640cefc00bfff7a789c99792af5a8fc40a0b2dd25220767c131a9bd547d@ec2-54-217-235-87.eu-west-1.compute.amazonaws.com:5432/d1tcs8ocagppgm
+        * DISABLE_COLLECTSTATIC : 1
+      
+4. Download the code from the Github repository [here](https://github.com/chrisoc19/workout).
+5. Click on _Clone_ or _download then Download ZIP_. This will download the code into a ZIP folder locally on your computer.
+6. Uncompress the ZIP folder.
+7. Open up a terminal or cmd prompt and login into Heroku CLI.
+    * ````heroku login````
+8. Check the app is present.
+    * ````heroku apps````
+9. A runtime.txt and Procfile have already been created for this project but make sure they are present. If for some 
+reason they are not then follow the steps below to create them.
+    * Runtime.txt
+        * Create a new text file in the root directory of the project and add ‘python-3.6.6’ to the file.
+    * Procfile
+        * In a terminal make sure you are in the root directory of the project then run ````touch Procfile````.
+        * Add the following text to the Procfile ‘web: flask translate compile; gunicorn meat_free:app’.
+10. Add a new git remote for Heroku.
+    * ````git remote add heroku git@heroku.comYOUR_APP_NAME.git````
+11. Push to Heroku.
+    * ````git push heroku master````
+12. Give Heroku a few minutes to get it all set up and then check the activity logs under Activity tab in your Heroku 
+dashboard. 
+13. Once the build is complete click on Open App top right to see the project in action.
 
 
 ## Credits
