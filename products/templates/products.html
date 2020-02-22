@@ -54,6 +54,7 @@
 									style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
 							
 							<h5 style="text-align:center">{{ product.name }}</a></h5>
+                            <p>{{ product.brand }}</p>
                             <p>${{ product.price }}</p>
 							<form method="post" class="d-flex justify-content-center"
 								action="{% url 'add_to_cart' product.id %}">

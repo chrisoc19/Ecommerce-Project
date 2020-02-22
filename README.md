@@ -114,21 +114,20 @@ Heroku deployment - this is done as a last step to ensure that all installed pac
 
 1. Sign up for a Heroku account
 2. Install Heroku using bash: sudo snap install heroku --classic
-3. Install dependencies (gunicorn, Pillow, psycopg2, whitenoise, dj_database_url)
-4. Add Whitenoise to middleware inside settings.py
-5. Log into heroku account with heroku login -i
-6. Create a new app in bash: heroku create <app_name>
-7. Copy over uploadcare and Stripe key details from bashrc into Heroku Config vars
-8. Create a Procfile and add the following line: web: gunicorn <PROJECT_FOLDER>.wsgi:application
-9. Add heroku app url to allowed hosts in settings.py, and also change the static directory to STATIC_ROOT
-10. Create the requirements.txt file using bash: pip3 freeze --local > requirements.txt
-11. Commit and push the project to heroku
+3. Install dependencies (gunicorn, Pillow, psycopg2, dj_database_url)
+4. Log into heroku account with heroku login -i
+5. Create a new app in bash: heroku create <app_name>
+6. Copy over uploadcare and Stripe key details from bashrc into Heroku Config vars
+7. Create a Procfile and add the following line: web: gunicorn <PROJECT_FOLDER>.wsgi:application
+8. Add heroku app url to allowed hosts in settings.py, and also change the static directory to STATIC_ROOT
+9. Create the requirements.txt file using bash: pip3 freeze --local > requirements.txt
+10. Commit and push the project to heroku
 - git add .
 - git commit -m "commit name"
 - git push heroku master
-12. Set up Postgre database with heroku addons:create heroku-postgresql
-13. Get the updated databse url by typing heroku config, and copy it into settings.py and Heroku's Config vars
-14. Migrate database and create a superuser to make changes to it'
+11. Set up Postgre database with heroku addons:create heroku-postgresql
+12. Get the updated databse url by typing heroku config, and copy it into settings.py and Heroku's Config vars
+13. Migrate database and create a superuser to make changes to it'
 
 I deployed the site to Github with the following steps:
 
