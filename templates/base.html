@@ -27,8 +27,8 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="/">Viking POP </a>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light" style="font-family: Raleway">
+		<a class="navbar-brand" href="/" style="font-size: 30px;">Viking POP </a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -37,20 +37,20 @@
 			<ul class="navbar-nav mr-auto">
 
 				<li class="nav-item">
-					<a class="nav-link" href="{% url 'product_home' %}" >All Products<span class="sr-only"></span></a>
+					<a class="nav-link" href="{% url 'product_home' %}" style="font-size: 20px;" >All Products<span class="sr-only"></span></a>
 				</li>
 				<li class="nav-item"> 
-					 <a class="nav-link" href="{% url 'category' %}">Categories</a> 
+					 <a class="nav-link" href="{% url 'category' %}"style="font-size: 20px;">Categories</a> 
 				 </li> 
 
 				{% if user.is_authenticated %}
                
 				<li class="nav-item"> 
-					 <a class="nav-link" href="{% url 'logout' %}">Log Out</a> 
+					 <a class="nav-link" href="{% url 'logout' %}" style="font-size: 20px;">Log Out</a> 
 				 </li> 
                 {%  else %}
                 <li class="nav-item"> 
-					 <a class="nav-link" href="{% url 'login' %}">Log In</a> 
+					 <a class="nav-link" href="{% url 'login' %}" style="font-size: 20px;">Log In</a> 
 				 </li> 
                    
 				
@@ -63,7 +63,7 @@
 				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 			</form>
 		</div>
-        <a class="nav-item cart-item" href="{% url 'view_cart' %}"> {% if product_count > 0 %}<i class="fas fa-shopping-cart fa-2x"></i>{% endif %}
+        <a class="nav-item cart-item" href="{% url 'view_cart' %}"> {% if product_count > 0 %}<i class="fas fa-shopping-cart fa-lg"></i>{% endif %}
 				{% if product_count > 0 %}
 				<label class="badge badge-warning">{{ product_count }}</label>
 				{% endif %}
@@ -81,6 +81,7 @@
 		</div>
 	</div>
 	{% endif %}
+    
 
 	
 
@@ -96,7 +97,7 @@
 	</body>
   <!--Footer-->
 
-  <footer class="  footer text-center " >
+  <div class="  footer text-center " >
   
     
 
@@ -124,7 +125,7 @@
      
     <!--/.Copyright-->
 
-  </footer>
+  </div>
   <!--/.Footer-->
 
 
