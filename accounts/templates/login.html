@@ -2,15 +2,41 @@
 {% extends "base.html" %}
 {% load bootstrap_tags %}
 {% block content %}
-    <form method="post" action="{% url 'login' %}?next={{ next }}" class="accountform">
-        <fieldset class="form-group">
-            <legend>Login</legend>
-            {% csrf_token %}
-            {{ login_form | as_bootstrap }}
-            <p>Need to register?<a href="{% url 'registration' %}">Register</a></p>
-             <p><a href="{% url 'password_reset' %}">Forgot my password</a></p>
-             
-            <button type="submit" class="btn btn-primary">Login</button>
-        </fieldset>
-    </form>
+  
+
+<div class="container-fluid" style="padding-top:150px">
+    <div class="row">
+        <div class="col-12">
+            <div class="container mx-auto">
+                <div class="row justify-content-center"  style="background: #e8e8e847;">
+                    <div class="col-12 col-md-6">
+
+                       
+                        <div class="contact-form-wrapper my-5">
+
+                       
+                            <p class="text-muted mb-3 border-bottom">Need an account? <a href="{% url 'registration' %}"
+                                   >Register here.</a></p>
+
+                            <form method="POST">
+                                {% csrf_token %}
+                                <fieldset class="form-group">
+                                    {{ login_form | as_bootstrap }}
+                                </fieldset>
+                                   <p><a href="{% url 'password_reset' %}">Password reset</a></p>
+                                <div class="form-group">
+                                    <button  class="btn btn-secondary" type="submit">Submit</button>
+                                </div>
+                            </form>
+                         
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
 {% endblock %}
