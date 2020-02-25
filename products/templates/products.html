@@ -58,10 +58,13 @@
 								<div class="product"
 									style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div></a>
 							
-							<a href="{{product.get_absolute_url}}"><h5 style="text-align:center">{{ product.name }}</a>
+                            <div>
+                            <a href="{{product.get_absolute_url}}"><h5 style="text-align:center">{{ product.name }}</a>
                             <p>{{ product.brand }}</p>
                             <p>${{ product.price }}</p>
 							</h5>
+                            </div>
+							
 							<form method="post" class="d-flex justify-content-center"
 								action="{% url 'add_to_cart' product.id %}">
 								{% csrf_token %}
