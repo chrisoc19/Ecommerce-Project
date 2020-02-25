@@ -13,54 +13,48 @@
         <!-- Heading & Description -->
     
         
+
+<main class="mt-5 pt-5" >
 {% for category in categories %}
- <main class="mt-5 pt-5" >
     <div class="container">
-
-   
-
-      <!--Section: Cards-->
-      <section class="pt-5">
+        <section >
 
         
-        <!--Grid row-->
-        <div class="row wow fadeIn">
+            <!--Grid row-->
+            <div class="row wow fadeIn">
 
-          <!--Grid column-->
-          <div class="col-lg-5 col-xl-4 mb-4">
-            <!--Featured image-->
-            <div class="view overlay rounded z-depth-1">
-              <img src="{{ MEDIA_URL }}{{ category.image }}" class="img-fluid" alt="">
-              <a href="{{category.get_absolute_url}}">
-                <div class="mask rgba-white-slight"></div>
-              </a>
+                <!--Grid column-->
+                <div class="col-lg-5 col-xl-4 mb-4">
+                    <!--Featured image-->
+                    <div class="view overlay rounded z-depth-1">
+                    <img src="{{ MEDIA_URL }}{{ category.image }}" class="img-fluid" alt="">
+                    <a href="{{category.get_absolute_url}}">
+                        <div class="mask rgba-white-slight"></div>
+                    </a>
+                    </div>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-lg-7 col-xl-7 ml-xl-4 mb-4">
+                    <h3 class="mb-3 font-weight-bold dark-grey-text">
+                    <a href="{{category.get_absolute_url}}">{{ category.name }}</a>
+                    </h3>
+                    <p class="grey-text">{{ category.description }}</p>
+                    <a href="{{category.get_absolute_url}}" class="btn btn-primary btn-md">{{ category.name }}
+                    <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <!--Grid column-->
             </div>
-          </div>
-          <!--Grid column-->
-
-          <!--Grid column-->
-          <div class="col-lg-7 col-xl-7 ml-xl-4 mb-4">
-            <h3 class="mb-3 font-weight-bold dark-grey-text">
-              <a href="{{category.get_absolute_url}}">{{ category.name }}</a>
-            </h3>
-            <p class="grey-text">{{ category.description }}</p>
-            <a href="{{category.get_absolute_url}}" class="btn btn-primary btn-md">{{ category.name }}
-              <i class="fas fa-arrow-right"></i>
-            </a>
-          </div>
-          <!--Grid column-->
-
-        
-    
-
-      </section>
-      <!--Section: Cards-->
+        </section>
+     <!--Section: Cards-->
 
     </div>
-  </main>
-  <!--Main layout-->
+  
 
   
 {% endfor %}
+</main>
   
 {% endblock %}

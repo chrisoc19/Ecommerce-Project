@@ -56,13 +56,16 @@
 						<div class="panel-body">
 							<a href="{{product.get_absolute_url}}">
 								<div class="product"
-									style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
+									style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div></a>
+							
+                          
+                           <a href="{{product.get_absolute_url}}"> <h5 style="text-align:center">{{ product.name }}</h5></a>
+                            <h5>{{ product.brand }}</h5>
+                            <h5>${{ product.price }}</h5>
 							
                            
-                           <h5 style="text-align:center">{{ product.name }}</a>
-                            <p>{{ product.brand }}</p>
-                            <p>${{ product.price }}</p>
-							</h5>
+                           
+                          
                         
 							
 							<form method="post" class="d-flex justify-content-center"
