@@ -1,4 +1,4 @@
-from django.test import TestCase, Client
+from django.test import TestCase
 from django.urls import reverse, resolve
 from .views import checkout
 
@@ -12,5 +12,3 @@ class Test_urls(TestCase):
     def test_checkout_url_is_resolved(self):
         url = reverse('checkout')
         self.assertEquals(resolve(url).func, checkout)
-
-

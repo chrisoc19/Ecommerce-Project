@@ -1,7 +1,9 @@
 from django.test import TestCase, Client
 from django.urls import reverse, resolve
-from .views import all_products, all_categories, products_by_category, products_detail, product_home
 from .models import Product
+from .views import (
+    all_products, all_categories, products_by_category,
+    products_detail, product_home)
 
 
 # Create your tests here.
