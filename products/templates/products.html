@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<main role="main">
+<main>
 	<div class="container text-center">
 		<div class="row text-center logo">
 			<div class="col-12">
@@ -20,7 +20,7 @@
 					<div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}"
 						id="slide{{ forloop.counter }}">
 						<a href="{{category.get_absolute_url}}">
-							<img  src="{{ MEDIA_URL }}{{ category.image }} " style=""class="d-block w-100" alt="..."></a>
+							<img  src="{{ MEDIA_URL }}{{ category.image }} " style="" class="d-block w-100" alt="..."></a>
                             
 							<div class="carousel-caption"  >
                             
@@ -56,9 +56,9 @@
 						<div class="panel-body">
 							<a href="{{product.get_absolute_url}}">
 								<div class="product"
-									style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
+									style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div></a>
 							
-							<h5 style="text-align:center">{{ product.name }}</a>
+							<a href="{{product.get_absolute_url}}"><h5 style="text-align:center">{{ product.name }}</a>
                             <p>{{ product.brand }}</p>
                             <p>${{ product.price }}</p>
 							</h5>
