@@ -124,6 +124,10 @@ The test results will be shown within the terminal.
  ### Travis ###
 - Travis was used throughout the unit testing of this project to provide continuous integration with the deployed site. The Travis Documentation provides all the info needed to set it up.
 
+### Manual Testing ###
+Below is a detailed account of all the manual testing that has been done to confirm all areas of the site work as expected.
+
+
 
 
 
