@@ -11,7 +11,7 @@ def logout(request):
     """ Logs user out"""
     auth.logout(request)
     messages.success(request, "You have been successfully logged out!")
-    return redirect(reverse('products'))
+    return redirect(reverse('login'))
 
 
 def login(request):

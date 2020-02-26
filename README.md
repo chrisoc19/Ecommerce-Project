@@ -159,9 +159,37 @@ Below is a detailed account of all the manual testing that has been done to conf
 - Tried to log in with wrong user details and confim that error messages show.
 - Tried to submit form with empty fields and confirm that required messages appear.
 - Clicked on register link and confim that I am taken to the registration page.
+- Clicked on forgot email link and confim that I am taken to the forgot email page.
 
-6. Register Page:
+6. Log out: 
+- When a user is logged in and clicks logout in navbar it logs user out and returns the log in page.
+
+
+7. Register Page:
 - Tried to submit form with empty fields and confirm that required messages appear.
+- Tried to register with wrong user details and confim that error messages show.
+- Confirm that a new user can be registered.
+
+
+8. Forgot email page:
+- Entered email adress and confim an email was sent.
+
+9. Search bar:
+- Tried to submit empty form and confim error message appears.
+- If Search is found it displays those products.
+- If no project is found an error message appears.
+
+10. Cart page:
+- Clicked product name link and was taken to that product detail page.
+- Confirm that product quantity can be changed.
+- Clicked remove icon and confirm that item is removed.
+
+11. checkout Page:
+- Confim user needs to be logged in to view checkout page.
+- Tried to submit empty form and confim error message appears.
+- Tried to submit with invailed month and day and confim error message appears.
+- Enter correct details and confirm payment is successful.
+
 
 
 
