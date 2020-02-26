@@ -168,3 +168,17 @@ caption p {
 font-family: 'Raleway'
 }
 
+@media screen and (max-width: 600px) {
+	.detail {
+	    font-size: 1rem;
+	}
+}
+
+ @media (max-width: 768px) {
+  .btn-responsive {
+    padding:2px 4px;
+    font-size:80%;
+    line-height: 1;
+  }
+}
+
