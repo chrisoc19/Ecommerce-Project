@@ -28,8 +28,8 @@
 								<!-- Default input -->
 								<input type="number" value="1" aria-label="Search" min="0" class="form-control"  name="quantity" style="display:none">
 								<button class="btn btn-primary btn-md my-0 p" type="submit">Add to cart
-                <i class="fas fa-shopping-cart ml-1"></i>
-              </button>
+                                <i class="fas fa-shopping-cart ml-1"></i>
+                            </button>
 
 							</form>
 						</div>
@@ -39,12 +39,23 @@
 
 					{% endfor %}
 				</div>
+       <div class="page" style="margin-right:300px;">
+        {% include "pagination.html" %} 
+       </div>
+       <style>
+       @media (min-width: 768px) {
+  .page {
+    margin-left:140px
+  }
+}
+
        
+       </style>
 
 			</div>
 		</div>
 		
-      {% include "pagination.html" %} 
+     
           
 
 
