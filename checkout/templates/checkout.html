@@ -27,9 +27,10 @@
             
             <!-- /Icon Divider -->
  
-            <div id="credit-card-errors" style="display: none;">
-	<div id="stripe-error-message"></div>
+            <div class="alert alert-danger" role="alert" id="credit-card-errors" style="display: none;">
+	<div class="text-center" id="stripe-error-message"></div>
 </div>
+
 <legend class="form-inline-001 text-center">Payment Details</legend>
 
 
@@ -71,7 +72,7 @@
       </ul>
     </div>
 </div>
-<div align="right">
+<div ">
 {% csrf_token %}
 	<input style="margin-left:4px;"
      class=" btn btn-primary"
