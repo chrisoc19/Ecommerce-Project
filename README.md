@@ -191,14 +191,6 @@ Below is a detailed account of all the manual testing that has been done to conf
 - Enter correct details and confirm payment is successful.
 
 
-
-
-
-
-
-
-
-
 ## Deployment
 
 Heroku deployment - this is done as a last step to ensure that all installed packages are included in the requirements.txt file
