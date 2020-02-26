@@ -1,11 +1,15 @@
 {% extends "base.html" %}
 {% load bootstrap_tags %}
 {% block content %}
-{% for field in form %}
-   {% for error in field.errors %}
-       {{ error }}
-   {% endfor %}
-{% endfor %}
+
+<style>
+.error-msg{
+
+    color:red;
+}
+</style>
+  
+
 <div class="container-fluid" style="padding-top:150px">
     <div class="row">
         <div class="col-12">
@@ -22,6 +26,7 @@
                             <form method="POST">
                                 {% csrf_token %}
                                 <fieldset class="form-group">
+                                <h1>{{ form.errors.email }}</h1>
                                    {{ registration_form | as_bootstrap }}
                                 </fieldset>
                                 <div class="form-group">
