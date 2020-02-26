@@ -35,7 +35,7 @@
 
 	
 {% endfor %}
-{% endif %}
+
 
 <div class="row text-center">
 
@@ -48,7 +48,7 @@
 	<a href="{% url 'checkout' %}" class="btn btn-dark" role="button">Checkout</a>
 </div>
 </div>
-
+{% endif %}
 
 
 {% if product_count == 0 %}
