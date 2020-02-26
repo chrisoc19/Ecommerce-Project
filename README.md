@@ -127,6 +127,45 @@ The test results will be shown within the terminal.
 ### Manual Testing ###
 Below is a detailed account of all the manual testing that has been done to confirm all areas of the site work as expected.
 
+1. Navbar:
+- Clicked each link in the navbar to confirm that it leads to the correct page.
+- Confirm that when logged out the option "Log in" is visible and that "Log out" is not.
+- Log into the site, confirm that options "Log out" is visible and that "Log in" is not.
+- Confirm that Cart icon is only visable when an item is in cart.
+
+2. Footer:
+- Clicked the email link and confirmed the email app opens.
+
+3. Landing Page:
+- Clicked carousel indicators and confims it works.
+- Clicked carousel links and was taken to the correct pages.
+
+- Clicked product image to confim I was taken to that product details page.
+- Clicked product name to confim I was taken to that product details page.
+- Clicked product category name to confim I was taken to that product category page.
+- Added a item to cart to confirm an item can be added to cart.
+
+3. All Products Page:
+- Clicked product image to confim I was taken to that product details page.
+- Clicked product name to confim I was taken to that product details page.
+- Clicked product category name to confim I was taken to that product category page.
+- Added a item to cart to confirm an item can be added to cart.
+- Clicked Pagination to confim only six items where displayed at a time all pages work.
+
+4. All Categories Page:
+- Clicked category name to Confim I was taken to that product category page.
+
+5. Login Page:
+- Tried to log in with wrong user details and confim that error messages show.
+- Tried to submit form with empty fields and confirm that required messages appear.
+- Clicked on register link and confim that I am taken to the registration page.
+
+6. Register Page:
+- Tried to submit form with empty fields and confirm that required messages appear.
+
+
+
+
 
 
 
