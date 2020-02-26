@@ -2,6 +2,16 @@
 {% load static %}
 {% block content %}
 
+{% if not products %}
+
+
+<div class="text-center" style="padding-top:200px;">
+<h1>No search results!</h1>
+<a class="btn btn-primary" href="{% url 'product_home' %}" role="button">All Products</a>
+</div>
+
+{% endif %}
+
 <div class="album py-5" >
 			<div class="container text-center">
             
