@@ -19,7 +19,7 @@
 							
                           
                            <a href="{{product.get_absolute_url}}"> <h5 style="text-align:center">{{ product.name }}</h5></a>
-                            <a href="{{category.get_absolute_url}}"><h5>{{ product.category }}</h5></a>
+                            <a href="{{product.category.get_absolute_url}}"><h5>{{ product.category }}</h5></a>
                             <h5>${{ product.price }}</h5>
 							
 							<form method="post" class="d-flex justify-content-center"
