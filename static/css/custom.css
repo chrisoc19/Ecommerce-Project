@@ -59,15 +59,6 @@ body {
 .badge-warning[href] {
     background-color: #c67605;
 }
- /* Paginator*/
-  @media (min-width: 768px) {
-  .page {
-    margin-left:140px
-  }
-}
-
-
-
 
  /* Styling for products image*/
 .product {
@@ -256,4 +247,24 @@ font-family: 'Raleway'
   .modal-content {
     width: 100%;
   }
+}
+
+ /* Paginator*/
+  @media (min-width: 768px) {
+  .page {
+    margin-left:140px
+  }
+}
+
+ /* registration page page */
+.error-msg{
+
+    color:red;
+}
+.reg-row{
+    background: #e8e8e847;
+}
+
+.con-reg{
+    padding-top:150px
 }
