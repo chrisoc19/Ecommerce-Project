@@ -50,7 +50,7 @@ def all_categories(request):
 
 def products_by_category(request, category_slug):
     categories = Category.objects.all()
-    products = Product.objects.all()
+    products = Product.objects.all().order_by("name")
     if category_slug:
         category = get_object_or_404(Category, slug=category_slug)
         products = products.filter(category=category)
