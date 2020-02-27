@@ -190,6 +190,9 @@ Below is a detailed account of all the manual testing that has been done to conf
 - Tried to submit with invailed month and day and confim error message appears.
 - Enter correct details and confirm payment is successful.
 
+### Bugs I found
+I found a bug/issue with the checkout page, the visa test card number (4242 4242 4242 4242) would cause an error.
+
 
 ## Deployment
 
