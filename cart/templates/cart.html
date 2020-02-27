@@ -12,10 +12,9 @@
   <div class="row">
 
     <div class="col-sm" >
-    <h5>Item: <a href="{{item.product.get_absolute_url}}">{{ item.product.name }}</a></h5>
-      <a class="thumbnail pull-left" href="{{item.product.get_absolute_url}}">
+    <h5> <a  class="link"href="{{item.product.get_absolute_url}}">{{ item.product.name }}</a></h5>
+      <a class="thumbnail pull-left link" href="{{item.product.get_absolute_url}}">
 			<img class="media-object" src="{{ MEDIA_URL }}{{ item.product.image }}" style="width: 72px; height: 72px;"> </a>
-            <!-- <h5 style="padding-bottom:20px;"> Category : <a href="{{item.product.category.get_absolute_url}}">{{ item.product.category }}</a></h5> -->
     </div>
     <div class="col-sm">
     <h5>Quantity</h5>
