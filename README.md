@@ -223,7 +223,16 @@ To deploy the page locally:
 1. Go to the github [Link](https://github.com/chrisoc19/Ecommerce-Project)
 2. Click on the Clone/download button and copy the URL
 3. Set up and install your own Stripe and uploadcare accounts
-4. To run the application locally, type python3 manage.py runserver 8080 in bash
+4. Install all required modules with the command
+- pip3 -r requirements.txt.
+5. Migrate the admin panel models to create your database template with the terminal command.
+- python3 manage.py migrate.
+6. Create your superuser to access the django admin panel and database with the following command, and then follow the steps to add your admin username and password:
+- python manage.py createsuperuser
+7. To run the application locally, type python3 manage.py runserver 8080 in bash.
+8. Once the program is running, go to the local link provided and add /admin to the end of the ur. Here log in with your superuser account and create Products within the new database.
+
+Once instances of these items exist in your database your local site will run as expected.
 
 
 
