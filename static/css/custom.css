@@ -11,27 +11,10 @@ body {
     
     
 }
-.img-detail{
-    height:500px;
-    width:358px
-}
-
-
-  /* add to cart button */
-.d-flex {
-    display: -ms-flexbox!important;
-    display: flex!important;
-    margin-bottom: 35px;
-}
 
  /* Landing Page */
 
 
-
-
-.cart-item{
-    margin-left: 5px;
-}
 
 
 .container-content{
@@ -76,7 +59,17 @@ body {
 .badge-warning[href] {
     background-color: #c67605;
 }
+ /* Paginator*/
+  @media (min-width: 768px) {
+  .page {
+    margin-left:140px
+  }
+}
 
+
+
+
+ /* Styling for products image*/
 .product {
     text-align: center;
     background-size: contain;
@@ -86,14 +79,17 @@ body {
     height: 250px;
     margin: 0 auto;
 }
+.product:hover {opacity: 0.7;}
 
-
-
+.link { 
+    color: black; text-decoration: none;
+    } 
+.link:hover { 
+    color:  grey; text-decoration: none; 
+}
 caption p {
     word-wrap: break-word;
 }
-
-
 
 .product-description {
     min-height: 40px;
@@ -123,6 +119,17 @@ caption p {
   .page-header small {
     display: inline;
   }
+}
+
+/* add to cart button */
+.d-flex {
+    display: -ms-flexbox!important;
+    display: flex!important;
+    margin-bottom: 35px;
+}
+
+.cart-item{
+    margin-left: 5px;
 }
 
 .cart-row {
@@ -159,8 +166,14 @@ font-family: 'Raleway'
   }
 }
 
-
+/* Products detail page*/
+.img-detail{
+    height:500px; 
+    width:445px;
+}
 /* Style the Image Used to Trigger the Modal */
+
+
 #myImg {
   border-radius: 5px;
   cursor: pointer;

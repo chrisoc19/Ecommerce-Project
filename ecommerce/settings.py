@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+# imort env needs to be commented out before pushing to heroku#
 # import env
 import dj_database_url
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)

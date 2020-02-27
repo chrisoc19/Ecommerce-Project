@@ -12,7 +12,7 @@ def all_products(request):
 
 
 def product_home(request):
-    products = Product.objects.all()
+    products = Product.objects.all().order_by("name")
     categories = Category.objects.all()
     paginator = Paginator(products, 6)
     page = request.GET.get('page')

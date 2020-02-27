@@ -24,7 +24,7 @@
                             
 							<div class="carousel-caption"  >
                             
-								<a style="color:#ffffff;"href="{{category.get_absolute_url}}"><h3 style="font-family: Raleway;font-weight:900;text-shadow: 0px 0px 3px #000;font-size:50px" >{{ category.name }} </h3></a>
+								<a style="color:#ffffff; text-decoration: none;"href="{{category.get_absolute_url}}"><h3 style="font-family: Raleway;font-weight:900;text-shadow: 0px 0px 3px #000;font-size:50px" >{{ category.name }} </h3></a>
 								
 							</div>
 							
@@ -59,23 +59,18 @@
 									style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div></a>
 							
                           
-                           <a href="{{product.get_absolute_url}}"> <h5 style="text-align:center">{{ product.name }}</h5></a>
-                            <a href="{{product.category.get_absolute_url}}"><h5>{{ product.category }}</h5></a>
+                           <a class="link" href="{{product.get_absolute_url}}"> <h5 style="text-align:center">{{ product.name }}</h5></a>
+                            <a class="link" href="{{product.category.get_absolute_url}}"><h5>{{ product.category }}</h5></a>
                             <h5>${{ product.price }}</h5>
-							
-                           
-                           
-                          
-                        
-							
+							   
 							<form method="post" class="d-flex justify-content-center"
 								action="{% url 'add_to_cart' product.id %}">
 								{% csrf_token %}
 								<!-- Default input -->
 								<input type="number" value="1" aria-label="Search" min="0" class="form-control"  name="quantity" style="display:none">
 								<button class="btn btn-primary btn-md my-0 p" type="submit">Add to cart
-                <i class="fas fa-shopping-cart ml-1"></i>
-              </button>
+                                    <i class="fas fa-shopping-cart ml-1"></i>
+                                </button>
 
 							</form>
 						</div>
